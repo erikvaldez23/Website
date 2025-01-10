@@ -1,0 +1,73 @@
+/* Footer Container */
+.footer {
+    background-color: #000000; /* Dark background */
+    color: #fff; /* White text */
+    padding: 1rem 5%;
+  }
+  
+  /* Footer Content (Logo and Social Media) */
+  .footer-content {
+    display: flex;
+    justify-content: space-between; /* Align logo and social media */
+    align-items: center;
+    margin-bottom: 1rem; /* Add space before the bottom section */
+  }
+  
+  /* Company Logo */
+  .footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff; /* Gold for highlight */
+  }
+  
+  .footer-logo span {
+    color: #007bff; /* Blue highlight */
+  }
+  
+  /* Social Media Icons */
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer-social a {
+    color: #fff; /* White icons */
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-social a:hover {
+    color: #e16b6b; /* Gold on hover */
+  }
+  
+  /* Footer Bottom Section (Copyright and Domain) */
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444; /* Add a subtle line */
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .footer-bottom a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+    margin-left: 0.5rem;
+  }
+  
+  .footer-bottom a:hover {
+    color: #e16b6b; /* Hover effect for domain link */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-social {
+      margin-top: 1rem;
+    }
+  }
+  

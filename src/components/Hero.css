@@ -1,0 +1,231 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 95vh; /* Full viewport height */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), 
+    url('../assets/dark-background.png') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden; /* Hide overflowing elements during animation */
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Adjust height to control gradient size */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
+  z-index: 1; /* Ensure it appears on top of the hero background */
+}
+
+.hero-content {
+  position: relative; /* Ensure content stays above the gradient */
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+/* Hero Title */
+.hero-title {
+  font-size: 3rem; /* Default size for larger screens */
+  font-weight: bold;
+  line-height: 1.2; /* Adjust line spacing */
+  text-transform: uppercase; /* Uppercase text */
+  margin-bottom: 1.5rem;
+  opacity: 0; /* Start invisible */
+  transform: translateY(50px); /* Start slightly below its final position */
+  animation: fadeInUp 1.5s ease-out forwards; /* Animation for title */
+  animation-delay: 0.3s; /* Start animation after 0.3 seconds */
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: 1.5rem;
+  line-height: 1.6; /* Adjust line spacing for better readability */
+  opacity: 0; /* Start invisible */
+  transform: translateY(50px); /* Start slightly below its final position */
+  animation: fadeInUp 1.5s ease-out forwards; /* Animation for description */
+  animation-delay: 0.6s; /* Start animation after 0.6 seconds */
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Start below the final position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move to the final position */
+  }
+}
+
+/* General Navbar Styles */
+.navbar {
+  width: 100vw; /* Full viewport width */
+  position: fixed; /* Fix to the top of the page */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Keeps it above all other content */
+  display: flex;
+  justify-content: space-between; /* Space between logo and links */
+  align-items: center; /* Vertically center items */
+  padding: 1rem 2rem; /* Add spacing around the navbar */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05)); /* Gradient background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff; /* White logo color for contrast */
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 1.8rem; /* Space between links */
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none; /* Remove default underline */
+  color: #ffffff; /* White links for contrast */
+  font-size: 1.8rem;
+  font-weight: bold;
+  position: relative; /* Needed for positioning the pseudo-element */
+  cursor: pointer; /* Add pointer cursor for links */
+}
+
+.nav-links li a::after {
+  content: ''; /* Empty content for the pseudo-element */
+  position: absolute;
+  bottom: -4px; /* Position underline slightly below the text */
+  left: 0;
+  width: 0; /* Start with no underline */
+  height: 2px; /* Thickness of the underline */
+  background-color: #ffffff; /* White underline */
+  transition: width 0.3s ease; /* Smoothly expand the underline */
+}
+
+.nav-links li a:hover::after {
+  width: 100%; /* Expand the underline to cover the full width of the text */
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger-menu {
+  display: none; /* Hidden by default on larger screens */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 0.3rem;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff; /* White for visibility */
+}
+
+.hamburger-menu.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Navigation Links (Dropdown) */
+.nav-links.mobile-menu {
+  display: flex; /* Show links in dropdown */
+  flex-direction: column; /* Stack links vertically */
+  position: absolute;
+  top: 70px; /* Below the navbar */
+  right: 0;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.8); /* Dark background for dropdown */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.nav-links.mobile-menu li a {
+  color: #ffffff; /* White text for mobile menu */
+  margin-bottom: 1rem;
+}
+
+.nav-links.mobile-menu li:last-child {
+  margin-bottom: 0;
+}
+
+/* Contact Button */
+.contact-button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  color: #ffffff; /* White text */
+  border: 2px solid #ffffff; /* White border */
+  background: transparent; /* Transparent background */
+  border-radius: 20px; /* Rounded button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #fff; /* White background on hover */
+  color: #000; /* Dark text on hover */
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.5rem; /* Reduce font size for medium screens */
+  }
+
+  .hero-description {
+    font-size: 1rem; /* Adjust description size */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem; /* Smaller font size for mobile */
+  }
+
+  .hero-description {
+    font-size: 0.9rem; /* Smaller font size for mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hide links on smaller screens */
+  }
+
+  .hamburger-menu {
+    display: flex; /* Show hamburger menu */
+  }
+
+  .contact-button {
+    display: none; /* Hide the button for smaller screens */
+  }
+}
+
+/* Global Reset */
+body {
+  margin: 0; /* Remove body margin to prevent overflow */
+}
+
+* {
+  box-sizing: border-box; /* Prevent padding/borders from breaking layout */
+}

@@ -1,0 +1,117 @@
+/* Section Styles */
+.apps-section {
+  padding: 3rem 5%;
+  background-color: #000;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Limit the width of the content */
+.apps-section > * {
+  max-width: 1550px; /* Set the maximum width of the content */
+  width: 100%; /* Ensure content scales within the max-width */
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Title */
+.section-title {
+  font-size: 2.5rem; /* Slightly larger for better visibility */
+  font-weight: bold;
+  color: #fff; /* Updated for better contrast */
+  margin-bottom: 2rem;
+}
+
+/* Grid Layout */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  width: 100%; /* Ensure the grid takes full width within max-width */
+}
+
+/* App Card */
+.app-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Ensure the card fills its grid space */
+  max-width: 400px; /* Set a maximum width for each card */
+}
+
+.app-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image */
+.app-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Details */
+.app-details {
+  padding: 1rem;
+  text-align: left;
+}
+
+.app-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.app-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Button */
+.learn-more-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #000; /* Add a white outline */
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-image {
+    height: 150px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .app-details {
+    text-align: center; /* Center align on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .app-card {
+    max-width: 100%; /* Allow cards to take up full width on very small screens */
+  }
+}
