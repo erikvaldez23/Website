@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './Apps.css';
 import image1 from '../assets/cross-4.avif'
 import image2 from '../assets/cross-4.avif'
@@ -47,7 +48,9 @@ const Apps = () => {
             <div className="app-details">
               <h3 className="app-name">{app.name}</h3>
               <p className="app-description">{app.description}</p>
-              <a href={app.link} className="learn-more-button">Learn More</a>
+              <Link to={`/apps/${app.id}`} className="learn-more-button">
+                Learn More
+              </Link>
             </div>
           </div>
         ))}

@@ -1,0 +1,35 @@
+.project-details-page {
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: space-between; /* Pushes the footer to the bottom */
+    min-height: 100vh; /* Ensures the page takes up at least the full viewport height */
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .project-details-image {
+    max-width: 300px;
+    height: auto;
+    margin: 1rem auto; /* Centers the image horizontally */
+  }
+  
+  .project-details-content {
+    flex: 1; /* Allows the content to grow and fill available space */
+  }
+  
+  .back-button {
+    text-decoration: none;
+    color: #007bff;
+    margin-top: 2rem;
+    display: inline-block;
+  }
+  
+  .footer {
+    margin-top: auto; /* Ensures the footer stays at the bottom of the viewport */
+    background-color: #000;
+    color: white;
+    text-align: center;
+  }
+  

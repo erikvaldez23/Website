@@ -1,12 +1,43 @@
 import React, { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const scrollAfterRouting = (sectionId) => {
+    setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
+  const renderNavLink = (sectionId, label) => {
+    return location.pathname === '/' ? (
+      <ScrollLink 
+        to={sectionId} 
+        smooth={true} 
+        duration={500} 
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        {label}
+      </ScrollLink>
+    ) : (
+      <RouterLink 
+        to="/" 
+        onClick={() => {
+          scrollAfterRouting(sectionId);
+          setMobileMenuOpen(false);
+        }}
+      >
+        {label}
+      </RouterLink>
+    );
   };
 
   return (
@@ -25,66 +56,15 @@ const Navbar = () => {
       </div>
 
       <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu' : ''}`}>
-        <li>
-          <ScrollLink 
-            to="home" 
-            smooth={true} 
-            duration={500} 
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Home
-          </ScrollLink>
-        </li>
-        <li>
-          <ScrollLink 
-            to="about" 
-            smooth={true} 
-            duration={500} 
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            About
-          </ScrollLink>
-        </li>
-        <li>
-          <ScrollLink 
-            to="projects" 
-            smooth={true} 
-            duration={500} 
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Projects
-          </ScrollLink>
-        </li>
-        <li>
-          <ScrollLink 
-            to="apps" 
-            smooth={true} 
-            duration={500} 
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Apps
-          </ScrollLink>
-        </li>
-        <li>
-          <ScrollLink 
-            to="support" 
-            smooth={true} 
-            duration={500} 
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Support
-          </ScrollLink>
-        </li>
+        <li>{renderNavLink('home', 'Home')}</li>
+        <li>{renderNavLink('about', 'About')}</li>
+        <li>{renderNavLink('services', 'Services')}</li>
+        <li>{renderNavLink('projects', 'Projects')}</li>
+        <li>{renderNavLink('apps', 'Apps')}</li>
+        <li>{renderNavLink('support', 'Support')}</li>
       </ul>
       <button className="contact-button">
-        <ScrollLink
-          to="contact" // The ID of the contact section
-          smooth={true}
-          duration={500}
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          Get in Touch
-        </ScrollLink>
+        {renderNavLink('contact', 'Get in Touch')}
       </button>
     </nav>
   );

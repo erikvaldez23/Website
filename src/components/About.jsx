@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import logo from '../assets/adonai-logo.png'
+import logo from '../assets/adonai-logo-1.png'
 
 const About = () => {
   return (
