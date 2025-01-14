@@ -1,23 +1,50 @@
-import React from 'react';
-import './services.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./services.css";
+
+// In Services.jsx
+const services = [
+  {
+    id: "software-engineering", // This must match the key in servicesData
+    title: "Software Engineering",
+    description:
+      "We provide custom software solutions tailored to your needs.",
+  },
+  {
+    id: "advisory-services", // This must match the key in servicesData
+    title: "Advisory Services",
+    description: "Expert guidance to support your business growth.",
+  },
+  {
+    id: "3d-modeling-services", // Match this key too
+    title: "3D Modeling Services",
+    description: "Precision modeling for a variety of industries.",
+  },
+  {
+    id: "bpo-services", // Match this key too
+    title: "BPO Services",
+    description: "Streamlining business operations through outsourcing.",
+  },
+];
+
 
 const Services = () => {
   return (
-    <section className="services-section" id="services">
-      <div className="services-content">
-        <h2 className="section-title">SERVICES</h2>
-        <p className="section-subtitle">
-          Empowering Your Business with Cutting-Edge Software Solutions
-        </p>
-        <p className="services-description">
-        We provide innovative software solutions tailored to your needs, specializing in custom application development, 
-        system integration, cloud services, and ongoing support to help businesses thrive in the digital age.
-        </p>
-        {/* <p className="services-mission">
-          Our mission is to create innovative solutions tailored to your
-          ministry's goals, enabling you to focus on what truly matters –
-          serving your congregation and spreading your message.
-        </p> */}
+    <section className="services-section">
+      <div className="services-header">
+        <h2 className="section-title">Services</h2>
+        <p className="services-intro">Innovative Solutions Tailored to Your Needs</p>
+      </div>
+      <div className="services-grid">
+        {services.map((service) => (
+          <div className="service-card" key={service.id}>
+            <h3 className="service-title">{service.title}</h3>
+            <p className="service-description">{service.description}</p>
+            <Link to={`/services/${service.id}`} className="service-button">
+              <span>→</span>
+            </Link>
+          </div>
+        ))}
       </div>
     </section>
   );

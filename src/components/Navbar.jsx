@@ -43,7 +43,10 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        Adonai Innovations
+        {/* Use RouterLink for clickable logo */}
+        <RouterLink to="/" onClick={() => setMobileMenuOpen(false)}>
+          Adonai Innovations
+        </RouterLink>
       </div>
 
       <div
@@ -56,7 +59,6 @@ const Navbar = () => {
       </div>
 
       <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu' : ''}`}>
-        <li>{renderNavLink('home', 'Home')}</li>
         <li>{renderNavLink('about', 'About')}</li>
         <li>{renderNavLink('services', 'Services')}</li>
         <li>{renderNavLink('projects', 'Projects')}</li>

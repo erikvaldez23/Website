@@ -3,7 +3,7 @@ import './Support.css'
 
 const Support = () => {
     return (
-        <p>Support Content</p>
+        <p>Support Content To Be Developed</p>
     )
 }
 

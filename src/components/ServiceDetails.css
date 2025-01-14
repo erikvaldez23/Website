@@ -1,0 +1,96 @@
+/* Section Styles */
+.service-details-section {
+    padding: 4rem 5%;
+    min-height: 92vh;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content */
+    text-align: left; /* Align text left for content */
+  }
+  
+  .service-details-container {
+    max-width: 1550px; /* Consistent with other sections */
+    width: 100%;
+    margin: 0 auto; /* Center the container */
+  }
+  
+  /* Title Styles */
+  .service-details-title {
+    font-size: 2.5rem; /* Match with other section titles */
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #fff; /* Ensure readability on dark background */
+    text-align: left; /* Align text left for detail sections */
+  }
+  
+  /* Description Styles */
+  .service-details-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #cccccc; /* Slightly lighter color for better contrast */
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+  
+  /* Additional Info Section */
+  .service-details-info {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #111;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .service-details-info h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  
+  .service-details-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+  }
+  
+  /* Button Style for Navigation */
+  .service-details-back-button {
+    margin-top: 3rem;
+    padding: 0.8rem 1.5rem;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .service-details-back-button:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .service-details-title {
+      font-size: 2rem;
+      text-align: center;
+    }
+  
+    .service-details-description {
+      font-size: 1rem;
+      text-align: center;
+    }
+  
+    .service-details-info {
+      padding: 1.5rem;
+      text-align: center;
+    }
+  }
+  

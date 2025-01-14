@@ -37,7 +37,7 @@
   }
   
   .footer-social a:hover {
-    color: #e16b6b; /* Gold on hover */
+    color: #555;
   }
   
   /* Footer Bottom Section (Copyright and Domain) */
@@ -56,7 +56,7 @@
   }
   
   .footer-bottom a:hover {
-    color: #e16b6b; /* Hover effect for domain link */
+    color: #555; /* Hover effect for domain link */
   }
   
   /* Responsive Design */

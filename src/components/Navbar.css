@@ -20,6 +20,11 @@
   color: #ffffff; /* White logo color for contrast */
 }
 
+.logo a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from .logo */
+}
+
 /* Navigation Links */
 .nav-links {
   display: flex;
