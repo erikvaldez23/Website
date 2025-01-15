@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
 import image1 from '../assets/red-cross.avif';
@@ -38,13 +38,32 @@ const projectData = [
 ];
 
 const Projects = () => {
+  // Scroll-triggered animation logic
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate'); // Trigger animation
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 20% of the section is visible
+    );
+
+    const cards = document.querySelectorAll('.animate-on-scroll');
+    cards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="projects-section">
       <div className="projects-container">
         <h2 className="section-title">Featured Work</h2>
         <div className="projects-grid">
           {projectData.map((project) => (
-            <div className="project-card" key={project.id}>
+            <div className="project-card animate-on-scroll" key={project.id}>
               <img
                 src={project.image}
                 alt={project.title}

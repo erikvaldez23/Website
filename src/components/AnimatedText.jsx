@@ -16,13 +16,12 @@ const AnimatedText = () => {
   // Disable scrolling when Calendly modal is open
   useEffect(() => {
     if (showCalendly) {
-      document.body.style.overflow = "hidden"; // Prevent scrolling
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"; // Restore scrolling
+      document.body.style.overflow = "auto";
     }
-
     return () => {
-      document.body.style.overflow = "auto"; // Cleanup on unmount
+      document.body.style.overflow = "auto";
     };
   }, [showCalendly]);
 
@@ -32,46 +31,65 @@ const AnimatedText = () => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % animationWords.length);
     }, interval);
 
-    return () => clearInterval(timer); // Cleanup on unmount
+    return () => clearInterval(timer);
   }, [animationWords, interval]);
 
-  // Navigate to home and scroll to the projects section
+  // Scroll-triggered animation logic
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+              el.classList.add('animate'); // Trigger animation
+            });
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 20% of the section is visible
+    );
+
+    const target = document.querySelector('.animation-container');
+    if (target) observer.observe(target);
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleViewAllCaseStudies = () => {
-    navigate("/"); // Navigate to the home page
+    navigate("/");
     setTimeout(() => {
       const projectsSection = document.getElementById("projects");
       if (projectsSection) {
         projectsSection.scrollIntoView({ behavior: "smooth" });
       }
-    }, 100); // Delay to ensure navigation happens before scrolling
+    }, 100);
   };
 
   return (
     <div className="animation-container">
-      <div className="animation-logo">
+      <div className="animation-logo animate-on-scroll">
         <img src={logo} alt="Logo" />
       </div>
-      <h1 className="animation-heading">
+      <h1 className="animation-heading animate-on-scroll">
         {staticSentencePart1} <br />
         {staticSentencePart2} <br />
         <span className="animation-word">{animationWords[currentWordIndex]}</span>
       </h1>
-      <div className="animation-buttons">
+      <div className="animation-buttons animate-on-scroll">
         <button
           className="primary-btn"
-          onClick={() => setShowCalendly(true)} // Open Calendly modal
+          onClick={() => setShowCalendly(true)}
         >
           Schedule a Meeting
         </button>
         <button
           className="secondary-btn"
-          onClick={handleViewAllCaseStudies} // Navigate and scroll
+          onClick={handleViewAllCaseStudies}
         >
           View All Featured Work
         </button>
       </div>
 
-      {/* Calendly Modal */}
       {showCalendly && (
         <>
           <div
@@ -80,13 +98,13 @@ const AnimatedText = () => {
           >
             <div
               className="calendly-iframe-container"
-              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+              onClick={(e) => e.stopPropagation()}
             >
               <button
                 className="close-calendly-button"
                 onClick={() => setShowCalendly(false)}
               >
-                &times; {/* "X" Icon */}
+                &times;
               </button>
               <iframe
                 src="https://calendly.com/erikkvaldez/30min"

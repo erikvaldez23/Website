@@ -90,3 +90,25 @@
   background-color: #fff; /* White background on hover */
   color: #000; /* Black text on hover */
 }
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End in place */
+  }
+}
+
+/* Initial State Before Animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px); /* Position slightly below */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Triggered Animation Class */
+.animate {
+  animation: fadeInSlideUp 0.8s ease-out forwards; /* Fade and slide-up */
+}

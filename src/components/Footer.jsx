@@ -1,14 +1,24 @@
 import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './Footer.css';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content">
         {/* Company Logo */}
         <div className="footer-logo">
-          Adonai Innovations
+          <RouterLink to="/" onClick={scrollToTop}>
+            Adonai Innovations
+          </RouterLink>
         </div>
 
         {/* Social Media Icons */}

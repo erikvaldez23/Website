@@ -18,7 +18,7 @@ const Home = () => {
       <section id="about">
         <About />
       </section>
-      <section id="framework">
+      <section id="expertise">
         <FrameworkCarousel />
       </section>
       <section id="services">

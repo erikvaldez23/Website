@@ -40,7 +40,7 @@ const FrameworkCarousel = () => {
 
   return (
     <div className="framework-carousel">
-      <h2 className="carousel-title">Tools and Frameworks</h2>
+      <h2 className="carousel-title">Expertise</h2>
       <p className="carousel-subtitle">
         We consider ourselves to be technology agnostic, choosing the right tool for the job.
       </p>

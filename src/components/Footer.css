@@ -19,6 +19,11 @@
     font-weight: bold;
     color: #fff; /* Gold for highlight */
   }
+  .footer-logo a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
   
   .footer-logo span {
     color: #007bff; /* Blue highlight */

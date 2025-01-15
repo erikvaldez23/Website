@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import emailjs from 'emailjs-com';
 import './Contact.css';
-import contactImage from '../assets/adonai-logo-1.png';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,73 +16,94 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // You can integrate an API call here to handle form submissions
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        'service_ebq8fws', // EmailJS Service ID
+        'template_9pzmsve', // EmailJS Template ID
+        templateParams,
+        'IJjDD9FPCyRdlPMm0' // EmailJS User ID
+      )
+      .then(
+        (response) => {
+          console.log('Email sent successfully:', response.status, response.text);
+          alert('Message sent successfully!');
+          setFormData({ name: '', email: '', phone: '', message: '' });
+        },
+        (error) => {
+          console.error('Failed to send email:', error);
+          alert('Failed to send message. Please try again.');
+        }
+      );
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+              el.classList.add('animate'); // Trigger animation
+            });
+          }
+        });
+      },
+      { threshold: 0.4 } 
+    );
+
+    const target = document.querySelector('.contact-section');
+    if (target) observer.observe(target);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="contact-section">
       <div className="contact-container">
-        {/* Left Side: Form */}
-        <div className="contact-form-container">
-          <h2 className="section-title">
-            CONNECT WITH US
-          </h2>
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Your Name*</label>
+        {/* Form */}
+        <div className="contact-form-container animate-on-scroll">
+          <h2 className="section-title animate-on-scroll">Get In Touch</h2>
+          <form className="contact-form animate-on-scroll" onSubmit={handleSubmit}>
+            <div className="form-group animate-on-scroll">
               <input
                 type="text"
-                id="name"
                 name="name"
-                placeholder="Enter your name"
+                placeholder="Your Name*"
                 value={formData.name}
                 onChange={handleChange}
                 required
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="phone">Phone Number*</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Enter your phone number"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">E-mail*</label>
+            <div className="form-group animate-on-scroll">
               <input
                 type="email"
-                id="email"
                 name="email"
-                placeholder="Enter your email"
+                placeholder="E-mail*"
                 value={formData.email}
                 onChange={handleChange}
                 required
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
+            <div className="form-group animate-on-scroll">
               <textarea
-                id="message"
                 name="message"
-                placeholder="Enter your message"
-                rows="1"
+                placeholder="Your Message"
+                rows="4"
                 value={formData.message}
                 onChange={handleChange}
+                required
               ></textarea>
             </div>
-            <button type="submit" className="submit-button">Send</button>
+            <button type="submit" className="submit-button animate-on-scroll">
+              Send Message
+            </button>
           </form>
-        </div>
-
-        {/* Right Side: Image */}
-        <div className="contact-image-container">
-          <img src={contactImage} alt="Contact Us" className="contact-image" />
         </div>
       </div>
     </section>

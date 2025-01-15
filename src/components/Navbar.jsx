@@ -61,9 +61,10 @@ const Navbar = () => {
       <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu' : ''}`}>
         <li>{renderNavLink('about', 'About')}</li>
         <li>{renderNavLink('services', 'Services')}</li>
-        <li>{renderNavLink('projects', 'Projects')}</li>
-        <li>{renderNavLink('apps', 'Apps')}</li>
-        <li>{renderNavLink('support', 'Support')}</li>
+        <li>{renderNavLink('projects', 'Portfolio')}</li>
+        <li>{renderNavLink('expertise', 'Expertise')}</li>
+        {/* <li>{renderNavLink('apps', 'Apps')}</li> */}
+        {/* <li>{renderNavLink('support', 'Support')}</li> */}
       </ul>
       <button className="contact-button">
         {renderNavLink('contact', 'Get in Touch')}

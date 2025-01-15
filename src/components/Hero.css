@@ -1,8 +1,9 @@
+/* Hero Section */
 .hero-section {
   position: relative;
   width: 100%;
   height: 95vh; /* Full viewport height */
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), 
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
     url('../assets/dark-background.png') no-repeat center center/cover;
   display: flex;
   justify-content: center;
@@ -30,7 +31,6 @@
   padding: 0 1rem;
 }
 
-
 /* Hero Title */
 .hero-title {
   font-size: 3rem; /* Default size for larger screens */
@@ -54,16 +54,35 @@
   animation-delay: 0.6s; /* Start animation after 0.6 seconds */
 }
 
-/* Animation Keyframes */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px); /* Start below the final position */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* Move to the final position */
-  }
+/* Hero Buttons Container */
+.hero-buttons {
+  display: flex;
+  gap: 1rem; /* Space between the buttons */
+  margin-top: 1.5rem; /* Add spacing above the buttons */
+}
+
+/* Learn More Button */
+.hero-learn-more-button {
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  color: #fff; /* White text */
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid #fff; /* White outline */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+
+  /* Animation styles */
+  opacity: 0; /* Start invisible */
+  transform: translateY(50px); /* Start slightly below its final position */
+  animation: fadeInUp 1.5s ease-out forwards; /* Apply the fadeInUp animation */
+  animation-delay: 0.9s; /* Delay for button animation */
+}
+
+.hero-learn-more-button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
+  color: #fff; /* Ensure text stays white */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
 
 /* Schedule Meeting Button */
@@ -76,7 +95,6 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease; /* Smooth transition for hover effects */
-  margin-top: 1rem; /* Add spacing above the button */
 
   /* Animation styles */
   opacity: 0; /* Start invisible */
@@ -96,7 +114,7 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Add a subtle glow effect */
 }
 
-/* Keyframes already defined */
+/* Animation Keyframes */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -108,6 +126,7 @@
   }
 }
 
+/* Calendly Overlay */
 .calendly-overlay {
   position: fixed;
   top: 0;
@@ -155,144 +174,6 @@
 
 .close-calendly-button:hover {
   color: #555; /* Slightly darker on hover */
-}
-
-@media (max-width: 768px) {
-  .calendly-iframe-container {
-    width: 90%; /* Smaller width for mobile */
-    height: 70%; /* Smaller height for mobile */
-    max-width: 400px; /* Limit the maximum width */
-    max-height: 500px; /* Limit the maximum height */
-  }
-
-  .close-calendly-button {
-    font-size: 1.8rem;
-    top: 65px;
-    right: 0px;
-  }
-}
-
-
-
-/* General Navbar Styles */
-.navbar {
-  width: 100vw; /* Full viewport width */
-  position: fixed; /* Fix to the top of the page */
-  top: 0;
-  left: 0;
-  z-index: 1000; /* Keeps it above all other content */
-  display: flex;
-  justify-content: space-between; /* Space between logo and links */
-  align-items: center; /* Vertically center items */
-  padding: 1rem 2rem; /* Add spacing around the navbar */
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05)); /* Gradient background */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
-}
-
-/* Logo */
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #ffffff; /* White logo color for contrast */
-}
-
-/* Navigation Links */
-.nav-links {
-  display: flex;
-  gap: 1.8rem; /* Space between links */
-  list-style: none;
-}
-
-.nav-links li a {
-  text-decoration: none; /* Remove default underline */
-  color: #ffffff; /* White links for contrast */
-  font-size: 1.8rem;
-  font-weight: bold;
-  position: relative; /* Needed for positioning the pseudo-element */
-  cursor: pointer; /* Add pointer cursor for links */
-}
-
-.nav-links li a::after {
-  content: ''; /* Empty content for the pseudo-element */
-  position: absolute;
-  bottom: -4px; /* Position underline slightly below the text */
-  left: 0;
-  width: 0; /* Start with no underline */
-  height: 2px; /* Thickness of the underline */
-  background-color: #ffffff; /* White underline */
-  transition: width 0.3s ease; /* Smoothly expand the underline */
-}
-
-.nav-links li a:hover::after {
-  width: 100%; /* Expand the underline to cover the full width of the text */
-}
-
-/* Hamburger Menu for Mobile */
-.hamburger-menu {
-  display: none; /* Hidden by default on larger screens */
-  flex-direction: column;
-  cursor: pointer;
-  gap: 0.3rem;
-}
-
-.hamburger-menu span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #ffffff; /* White for visibility */
-}
-
-.hamburger-menu.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger-menu.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-menu.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Mobile Navigation Links (Dropdown) */
-.nav-links.mobile-menu {
-  display: flex; /* Show links in dropdown */
-  flex-direction: column; /* Stack links vertically */
-  position: absolute;
-  top: 70px; /* Below the navbar */
-  right: 0;
-  width: 200px;
-  background: rgba(0, 0, 0, 0.8); /* Dark background for dropdown */
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-}
-
-.nav-links.mobile-menu li a {
-  color: #ffffff; /* White text for mobile menu */
-  margin-bottom: 1rem;
-}
-
-.nav-links.mobile-menu li:last-child {
-  margin-bottom: 0;
-}
-
-/* Contact Button */
-.contact-button {
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  color: #ffffff; /* White text */
-  border: 2px solid #ffffff; /* White border */
-  background: transparent; /* Transparent background */
-  border-radius: 20px; /* Rounded button */
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.contact-button:hover {
-  background: #fff; /* White background on hover */
-  color: #000; /* Dark text on hover */
-  cursor: pointer;
 }
 
 /* Responsive Design */

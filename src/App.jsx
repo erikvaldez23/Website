@@ -13,6 +13,7 @@ import Apps from './components/Apps';
 import AppDetails from './components/AppDetails';
 import Contact from './components/Contact';
 import Support from './components/Support';
+import FrameworkCarousel from './components/FrameworkCarousel';
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/apps/:id" element={<AppDetails />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/support" element={<Support />} />
+            <Route path="/expertise" element={<FrameworkCarousel />} />
           </Routes>
         </div>
         <Footer />

@@ -17,6 +17,12 @@ const Hero = () => {
     };
   }, [showCalendly]);
 
+  const scrollToAbout = () => {
+    document.getElementById("about")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="hero-section">
       <div className="hero-content">
@@ -30,12 +36,17 @@ const Hero = () => {
           applications that drive efficiency, creativity, and growth.
         </p>
 
-        <button
-          className="schedule-meeting-button"
-          onClick={() => setShowCalendly(true)}
-        >
-          Schedule a Meeting
-        </button>
+        <div className="hero-buttons">
+          <button className="hero-learn-more-button" onClick={scrollToAbout}>
+            Learn More
+          </button>
+          <button
+            className="schedule-meeting-button"
+            onClick={() => setShowCalendly(true)}
+          >
+            Schedule a Meeting
+          </button>
+        </div>
 
         {showCalendly && (
           <>

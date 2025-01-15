@@ -3,14 +3,26 @@ import { useNavigate, useParams } from "react-router-dom";
 import './ServiceDetails.css'
 
 const servicesData = {
-  "software-engineering": {
-    title: "Software Engineering",
+  "custom-software-development": {
+    title: "Custom Software Development",
     description:
       "We provide custom software solutions tailored to your needs, helping businesses achieve scalability and operational efficiency.",
     extraInfo: "Our solutions include web apps, mobile apps, and system integrations.",
   },
-  "advisory-services": {
-    title: "Advisory Services",
+  "mobile-app-development": {
+    title: "Mobile App Development",
+    description:
+      "Our advisory services support clients through every stage of product development with expert guidance and insights.",
+    extraInfo: "We specialize in market research, technology strategy, and implementation planning.",
+  },
+  "web-development": {
+    title: "Web Development",
+    description:
+      "Our advisory services support clients through every stage of product development with expert guidance and insights.",
+    extraInfo: "We specialize in market research, technology strategy, and implementation planning.",
+  },
+  "bpo-services": {
+    title: "BPO Services",
     description:
       "Our advisory services support clients through every stage of product development with expert guidance and insights.",
     extraInfo: "We specialize in market research, technology strategy, and implementation planning.",
