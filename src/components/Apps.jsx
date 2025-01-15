@@ -40,7 +40,7 @@ const appsData = [
 const Apps = () => {
   return (
     <section className="apps-section">
-      <h2 className="section-title">OUR APPS</h2>
+      <h2 className="section-title">OUR APPS - POSSIBLY DELETE</h2>
       <div className="apps-grid">
         {appsData.map((app) => (
           <div className="app-card" key={app.id}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home'; // Import the new Home component
@@ -16,6 +17,7 @@ import Support from './components/Support';
 const App = () => {
   return (
     <Router>
+      <ScrollToTop/>
       <div>
         <Navbar />
         <div className="app">

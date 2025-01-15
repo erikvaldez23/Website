@@ -3,36 +3,35 @@ import { Link } from 'react-router-dom';
 import './Projects.css';
 import image1 from '../assets/red-cross.avif';
 import image2 from '../assets/cross-2.avif';
-import image3 from '../assets/cross-3.jpg';
+import image3 from '../assets/mobile-cross.jpg';
 import image4 from '../assets/cross-4.avif';
 
 const projectData = [
   {
     id: 1,
-    title: 'Mizzen + Main',
-    description: 'A fully custom headless commerce site for a growing men’s fashion brand.',
+    title: 'Project 1',
+    description: 'A short and concise description of the project',
     image: image1,
     url: '/projects/1',
-    featured: true, // Set this project as a featured card
   },
   {
     id: 2,
-    title: 'Virtual Care Now',
-    description: 'A modern health app to connect patients with doctors.',
+    title: 'Project 2',
+    description: 'A short and concise description of the project',
     image: image2,
     url: '/projects/2',
   },
   {
     id: 3,
-    title: 'Highway Logistics',
-    description: 'A logistics app for tracking delivery lanes and schedules.',
+    title: 'Project 3',
+    description: 'A short and concise description of the project',
     image: image3,
     url: '/projects/3',
   },
   {
     id: 4,
-    title: 'BPO Services',
-    description: 'Streamlining business operations through outsourcing.',
+    title: 'Project 4',
+    description: 'A short and concise description of the project',
     image: image4,
     url: '/projects/4',
   },
@@ -45,25 +44,18 @@ const Projects = () => {
         <h2 className="section-title">Featured Work</h2>
         <div className="projects-grid">
           {projectData.map((project) => (
-            <div
-              className={`project-card ${project.featured ? 'featured-card' : ''}`}
-              key={project.id}
-            >
+            <div className="project-card" key={project.id}>
               <img
                 src={project.image}
                 alt={project.title}
                 className="project-image"
               />
-              <div className="project-overlay">
-                <div className="project-text">
-                  <h3 className="project-title">{project.title}</h3>
-                  {project.featured && (
-                    <p className="project-description">{project.description}</p>
-                  )}
-                  <Link to={project.url} className="learn-more-button">
-                    Learn More
-                  </Link>
-                </div>
+              <div className="project-content">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                <Link to={project.url} className="projects-learn-button">
+                  Learn More
+                </Link>
               </div>
             </div>
           ))}
@@ -72,6 +64,5 @@ const Projects = () => {
     </section>
   );
 };
-
 
 export default Projects;

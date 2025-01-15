@@ -1,35 +1,301 @@
 .project-details-page {
-    display: flex;
-    flex-direction: column; /* Stacks content vertically */
-    justify-content: space-between; /* Pushes the footer to the bottom */
-    min-height: 100vh; /* Ensures the page takes up at least the full viewport height */
-    background-color: black;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 92vh;
+  background-color: black;
+  color: white;
+  padding: 0;
+}
+
+.project-hero-section {
+  position: relative;
+  height: 30vh;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), 
+    url('../assets/dark-background.png') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
+  z-index: 1;
+}
+
+.project-hero-title {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* OVERVIEW */
+.project-overview-section {
+  background-color: #000;
+  padding: 2rem;
+  text-align: center;
+}
+
+.project-overview-image {
+  width: 100%; /* Allow the image to scale responsively */
+  max-width: 1400px; /* Set the larger maximum width */
+  max-height: 800px; /* Set the larger maximum height */
+  height: auto; /* Preserve aspect ratio */
+  margin-bottom: 1rem;
+}
+
+
+.project-overview-description {
+  font-size: 3rem;
+  padding-top: 1rem;
+  color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* SERVICES & TOOLS */
+.project-services-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+.project-services-section,
+.tools-section {
+  flex: 1;
+  min-width: 500px;
+  max-width: 750px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.project-services-section h3,
+.tools-section h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.project-services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 2;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
+  gap: 4rem; /* Space between grid items */
+  justify-items: center; /* Center items within the grid */
+}
+
+.tool-item {
+  width: 150px; /* Set a fixed width */
+  height: 150px; /* Set a fixed height */
+  background: #1f1f1f; /* Background color */
+  display: flex; /* Use flexbox for centering content */
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+}
+
+.tool-item p {
+  font-size: 1.7rem; /* Adjust font size */
+  margin: 0.5rem 0 0; /* Add spacing above the text */
+  color: #ffffff;
+}
+
+/* PRODUCT STRATEGY */
+.product-strategy-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #000;
+}
+
+.product-strategy-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1400px;
+  gap: 3rem;
+}
+
+.product-strategy-title {
+  flex: 1;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.product-strategy-description {
+  flex: 2;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #fff;
+  text-align: justify;
+}
+
+/* PRODUCT DESIGN */
+.product-design-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #000;
+}
+
+.product-design-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1400px;
+  gap: 3rem;
+}
+
+.product-design-title {
+  flex: 1;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.product-design-description {
+  flex: 2;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #fff;
+  text-align: justify;
+}
+
+/* TESTIMONIAL */
+.testimonial-section {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: left;
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.testimonial-quote {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.testimonial-author {
+  font-size: 1.5rem !important;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.author-title {
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #c3c3c3;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .project-overview-image {
+    max-width: 100%; /* Allow the image to take the full width */
+    margin-bottom: 1rem; /* Add spacing below the image */
+  }
+  .project-overview-section {
+    padding: 1rem;
+  }
+
+  .project-overview-description {
+    font-size: 1.5rem;
+  }
+
+  .project-services-tools {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  .project-services-section, .tools-section {
+    min-width: 100%; /* Make sections full width */
+    max-width: 100%; /* Remove width restrictions */
+    margin-bottom: 2rem; /* Add spacing between stacked sections */
+  }
+  .tools-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid for smaller screens */
+    gap: 1rem; /* Reduce gap */
+  }
+
+  .product-strategy-container,
+  .product-design-container {
+    flex-direction: column;
+    gap: 1rem;
     text-align: center;
-    padding: 2rem;
   }
-  
-  .project-details-image {
-    max-width: 300px;
-    height: auto;
-    margin: 1rem auto; /* Centers the image horizontally */
+
+  .product-strategy-description,
+  .product-design-description {
+    font-size: 1rem;
+    line-height: 1.4;
   }
-  
-  .project-details-content {
-    flex: 1; /* Allows the content to grow and fill available space */
-  }
-  
-  .back-button {
-    text-decoration: none;
-    color: #007bff;
-    margin-top: 2rem;
-    display: inline-block;
-  }
-  
-  .footer {
-    margin-top: auto; /* Ensures the footer stays at the bottom of the viewport */
-    background-color: #000;
-    color: white;
+
+  .testimonial-content {
     text-align: center;
+    align-items: center;
   }
-  
+
+  .testimonial-quote {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-overview-description {
+    font-size: 1.2rem;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-strategy-description,
+  .product-design-description {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-quote {
+    font-size: 1.2rem;
+  }
+}
+

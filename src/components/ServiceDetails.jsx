@@ -35,15 +35,16 @@ const ServiceDetails = () => {
       </div>
     );
   }
-
   return (
-    <section className="service-details-section">
-      <div className="service-details-container">
-        <h1 className="service-details-title">{service.title}</h1>
-        <p className="service-details-description">{service.description}</p>
+    <div className="service-details-page">
+      <div className="service-hero-section">
+        <h1 className="service-hero-title">{service?.title || "Service Details"}</h1>
+      </div>
+      <div className="service-details-content">
+        <p className="service-details-description">{service?.description}</p>
         <div className="service-details-info">
           <h3>Additional Information</h3>
-          <p>{service.extraInfo}</p>
+          <p>{service?.extraInfo}</p>
         </div>
         <button
           className="service-details-back-button"
@@ -52,8 +53,10 @@ const ServiceDetails = () => {
           Back to Services
         </button>
       </div>
-    </section>
+    </div>
   );
+  
+  
 };
 
 export default ServiceDetails;

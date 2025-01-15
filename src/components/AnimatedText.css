@@ -1,0 +1,92 @@
+/* Main Container */
+.animation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 40vh;
+  background-color: #000000;
+  padding: 20px;
+}
+
+/* Logo */
+.animation-logo img {
+  margin-top: 80px;
+}
+
+/* Heading */
+.animation-heading {
+  font-family: 'Arial', sans-serif; /* Clean, bold font */
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+/* Animated Word Styling */
+.animation-word {
+  display: inline-block;
+  color: #3f49ff; /* Highlight color for animated word */
+  font-weight: 900;
+  animation: fade-in-out 4s ease-in-out infinite;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Buttons */
+.animation-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Button Styling */
+.primary-btn {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  border: 1px solid #fff; /* White border */
+  padding: 10px 20px; /* Padding for spacing */
+  font-size: 1rem; /* Font size */
+  font-weight: 600; /* Bold text */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Hover Effect */
+.primary-btn:hover {
+  background-color: #fff; /* White background on hover */
+  color: #000; /* Black text on hover */
+}
+
+
+.secondary-btn {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  border: 1px solid #fff; /* White border */
+  padding: 10px 20px; /* Padding for spacing */
+  font-size: 1rem; /* Font size */
+  font-weight: 600; /* Bold text */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.secondary-btn:hover {
+  background-color: #fff; /* White background on hover */
+  color: #000; /* Black text on hover */
+}

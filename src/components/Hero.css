@@ -66,6 +66,7 @@
   }
 }
 
+/* Schedule Meeting Button */
 .schedule-meeting-button {
   background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
   color: #fff; /* White text */
@@ -76,6 +77,12 @@
   cursor: pointer;
   transition: all 0.3s ease; /* Smooth transition for hover effects */
   margin-top: 1rem; /* Add spacing above the button */
+
+  /* Animation styles */
+  opacity: 0; /* Start invisible */
+  transform: translateY(50px); /* Start slightly below its final position */
+  animation: fadeInUp 1.5s ease-out forwards; /* Apply the fadeInUp animation */
+  animation-delay: 0.9s; /* Delay for button animation */
 }
 
 .schedule-meeting-button:hover {
@@ -88,6 +95,19 @@
   outline: none; /* Remove default focus outline */
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Add a subtle glow effect */
 }
+
+/* Keyframes already defined */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Start below the final position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move to the final position */
+  }
+}
+
 .calendly-overlay {
   position: fixed;
   top: 0;
