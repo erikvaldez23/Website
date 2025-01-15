@@ -24,7 +24,23 @@
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit color from .logo */
 }
+/* Contact Button */
+.contact-button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  color: #ffffff; /* White text */
+  border: 2px solid #ffffff; /* White border */
+  background: transparent; /* Transparent background */
+  border-radius: 20px; /* Rounded button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+.contact-button:hover {
+  background: #fff; /* White background on hover */
+  color: #000; /* Dark text on hover */
+  cursor: pointer;
+}
 /* Navigation Links */
 .nav-links {
   display: flex;
@@ -108,23 +124,6 @@
   margin-bottom: 0;
 }
 
-/* Contact Button */
-.contact-button {
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  color: #ffffff; /* White text */
-  border: 2px solid #ffffff; /* White border */
-  background: transparent; /* Transparent background */
-  border-radius: 20px; /* Rounded button */
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.contact-button:hover {
-  background: #fff; /* White background on hover */
-  color: #000; /* Dark text on hover */
-  cursor: pointer;
-}
 
 /* Responsive Navbar Styles */
 @media (max-width: 768px) {

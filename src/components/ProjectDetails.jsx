@@ -171,7 +171,7 @@ const ProjectDetails = () => {
         </div>
       )}
 
-      {project.image2 && (
+      {/* {project.image2 && (
         <div className='project-overview-section'>
           <img
             src={project.image2}
@@ -179,7 +179,7 @@ const ProjectDetails = () => {
             className="project-overview-image"
           />
         </div>
-      )}
+      )} */}
 
       {/* Product Design Section */}
       {project.design && (

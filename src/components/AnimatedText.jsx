@@ -4,9 +4,9 @@ import './AnimatedText.css';
 import logo from '../assets/adonai-logo-1.png';
 
 const AnimatedText = () => {
-  const staticSentencePart1 = "Need a ready-made product team";
-  const staticSentencePart2 = "to help your company";
-  const animationWords = ["transform?", "grow?", "innovate?", "thrive?"];
+  const staticSentencePart1 = "Looking for a dedicated team";
+  const staticSentencePart2 = "to accelerate your company's";
+  const animationWords = ["success?", "expansion?", "innovation?", "performance?"];
   const interval = 4000; // Change interval in milliseconds
 
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
