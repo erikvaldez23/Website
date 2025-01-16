@@ -23,7 +23,7 @@ const App = () => {
         <Navbar />
         <div className="app">
           <Routes>
-            <Route path="/Website/" element={<Home />} /> {/* Use Home for landing page */}
+            <Route path="/" element={<Home />} /> {/* Use Home for landing page */}
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:serviceId" element={<ServiceDetails />} />

@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="footer-content">
         {/* Company Logo */}
         <div className="footer-logo">
-          <RouterLink to="/Website/" onClick={scrollToTop}>
+          <RouterLink to="/" onClick={scrollToTop}>
             Adonai Innovations
           </RouterLink>
         </div>

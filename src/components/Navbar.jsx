@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   const handleLogoClick = () => {
-    if (location.pathname === '/Website/') {
+    if (location.pathname === '/') {
       scrollToTop();
     } else {
       setMobileMenuOpen(false);
@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   const renderNavLink = (sectionId, label) => {
-    return location.pathname === '/Website/' ? (
+    return location.pathname === '/' ? (
       <ScrollLink
         to={sectionId}
         smooth={true}
@@ -35,7 +35,7 @@ const Navbar = () => {
       </ScrollLink>
     ) : (
       <RouterLink
-        to="/Website/"
+        to="/"
         onClick={() => {
           setMobileMenuOpen(false);
           setTimeout(() => {
@@ -51,10 +51,10 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        {location.pathname === '/Website/' ? (
+        {location.pathname === '/' ? (
           <span onClick={scrollToTop}>Adonai Innovations</span>
         ) : (
-          <RouterLink to="/Website/" onClick={handleLogoClick}>
+          <RouterLink to="/" onClick={handleLogoClick}>
             Adonai Innovations
           </RouterLink>
         )}
