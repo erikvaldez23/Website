@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop'
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './components/Home'; // Import the new Home component
+import Home from './components/Home';
 import About from './components/About';
 import Services from './components/Services';
 import ServiceDetails from './components/ServiceDetails';
@@ -17,17 +17,18 @@ import FrameworkCarousel from './components/FrameworkCarousel';
 
 const App = () => {
   return (
-    <Router>
-      <ScrollToTop/>
+    <Router basename="/website">
+      {/* Ensure all routes account for /website as the base path */}
+      <ScrollToTop />
       <div>
         <Navbar />
         <div className="app">
           <Routes>
-            <Route path="/" element={<Home />} /> {/* Use Home for landing page */}
+            <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:serviceId" element={<ServiceDetails />} />
-            <Route path="/projects" element={<Projects/>} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="/apps" element={<Apps />} />
             <Route path="/apps/:id" element={<AppDetails />} />
