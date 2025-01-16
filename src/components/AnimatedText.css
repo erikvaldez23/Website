@@ -28,7 +28,7 @@
 /* Animated Word Styling */
 .animation-word {
   display: inline-block;
-  color: #3f49ff; /* Highlight color for animated word */
+  color: #007bff; /* Highlight color for animated word */
   font-weight: 900;
   animation: fade-in-out 4s ease-in-out infinite;
 }
@@ -111,4 +111,46 @@
 /* Triggered Animation Class */
 .animate {
   animation: fadeInSlideUp 0.8s ease-out forwards; /* Fade and slide-up */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .animation-container {
+    height: auto; /* Allow dynamic height */
+    padding: 10px; /* Compact padding */
+  }
+
+  .animation-heading {
+    font-size: 2rem; /* Smaller font size */
+    margin-bottom: 20px; /* Adjusted margin */
+  }
+
+  .animation-logo img {
+    width: 70%; /* Adjust logo size */
+    max-width: 120px;
+  }
+
+  .animation-buttons {
+    gap: 8px; /* Smaller gaps */
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    padding: 6px 12px; /* Compact padding */
+    font-size: 1rem; /* Smaller font size */
+    min-width: 80px; /* Ensure smaller buttons fit */
+  }
+}
+
+@media (max-width: 480px) {
+  .animation-heading {
+    font-size: 1.8rem; /* Further scale down font */
+    margin-bottom: 15px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    padding: 5px 10px; /* Minimal padding */
+    font-size: 0.75rem; /* Compact font size */
+  }
 }

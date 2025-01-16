@@ -1,3 +1,14 @@
+/* Root Variables */
+:root {
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+  --primary-color: #007bff;
+  --secondary-color: #ffffff;
+  --bg-color-dark: #1a1a1a;
+  --bg-color-light: #333;
+  --text-light: #cccccc;
+  --card-shadow: rgba(0, 0, 0, 0.2);
+}
 /* Section Styles */
 .projects-section {
   padding: 4rem 5%;
@@ -11,6 +22,15 @@
   margin: 0 auto; /* Center the section */
 }
 
+.projects-section-title {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  position: relative;
+  animation: fadeInSlideUp 1s ease-out;
+}
 /* Grid Layout */
 .projects-grid {
   display: grid;

@@ -46,7 +46,7 @@ const AnimatedText = () => {
           }
         });
       },
-      { threshold: 0.5 } // Trigger when 20% of the section is visible
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
     );
 
     const target = document.querySelector('.animation-container');

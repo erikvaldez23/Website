@@ -13,7 +13,7 @@ const About = () => {
           }
         });
       },
-      { threshold: 0.4 } // Trigger when 20% of the section is visible
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
     );
 
     const hiddenElements = document.querySelectorAll('.hidden');

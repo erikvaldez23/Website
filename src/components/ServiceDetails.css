@@ -1,19 +1,20 @@
-/* Entire Page Wrapper */
+/* General Page Styles */
 .service-details-page {
-  color: #fff;
-  background-color: #000;
-  min-height: 92vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
 
 /* Hero Section */
 .service-hero-section {
   position: relative;
   width: 100%;
-  height: 30vh; /* Adjust height as needed */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+  height: 30vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
     url('../assets/dark-background.png') no-repeat center center/cover;
   display: flex;
   justify-content: center;
@@ -24,54 +25,68 @@
 .service-hero-title {
   font-size: 3rem;
   font-weight: bold;
-  z-index: 1;
-}
-
-.service-hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
-  z-index: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Content Section */
 .service-details-content {
-  padding: 2rem 5%;
+  padding: 4rem 5%;
   max-width: 1200px;
   margin: 0 auto;
-  text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem; /* Spacing between sections */
 }
 
-.service-details-description {
+/* Service Description */
+.service-description p {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #cccccc;
+  color: #ccc;
+  text-align: justify;
 }
 
-.service-details-info {
-  margin-top: 1rem;
-  padding: 2rem;
-  background-color: #111;
+.section-divider {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Features Section */
+.service-features {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Spacing between feature containers */
+}
+
+/* Features Section */
+.feature-container {
+  background-color: #000; /* Black background */
+  border: 2px solid #fff; /* White outline */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  color: #fff; /* Ensure text color contrasts with black background */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-details-info h3 {
+.feature-container:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3); /* Enhanced white shadow on hover */
+}
+
+
+.feature-title {
   font-size: 1.8rem;
+  font-weight: bold;
   color: #fff;
   margin-bottom: 1rem;
 }
 
-.service-details-info p {
-  font-size: 1rem;
-  line-height: 1.6;
+.feature-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
   color: #ccc;
 }
 
@@ -98,7 +113,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .service-hero-section {
-    height: 20vh; /* Reduce height on smaller screens */
+    height: 20vh;
   }
 
   .service-hero-title {
@@ -106,18 +121,48 @@
   }
 
   .service-details-content {
-    padding: 1rem;
+    padding: 2rem;
   }
 
-  .service-details-description {
+  .service-description p {
     font-size: 1rem;
   }
 
-  .service-details-info h3 {
+  .section-divider {
+    margin: 1rem 0;
+  }
+
+  .feature-title {
     font-size: 1.5rem;
   }
 
-  .service-details-info p {
+  .feature-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-hero-section {
+    height: 18vh;
+  }
+
+  .service-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .service-details-content {
+    padding: 1rem;
+  }
+
+  .feature-container {
+    padding: 1rem;
+  }
+
+  .feature-title {
+    font-size: 1.2rem;
+  }
+
+  .feature-description {
     font-size: 0.9rem;
   }
 }

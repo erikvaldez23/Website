@@ -11,28 +11,36 @@ const Navbar = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const scrollAfterRouting = (sectionId) => {
-    setTimeout(() => {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleLogoClick = () => {
+    if (location.pathname === '/') {
+      scrollToTop();
+    } else {
+      setMobileMenuOpen(false);
+    }
   };
 
   const renderNavLink = (sectionId, label) => {
     return location.pathname === '/' ? (
-      <ScrollLink 
-        to={sectionId} 
-        smooth={true} 
-        duration={500} 
+      <ScrollLink
+        to={sectionId}
+        smooth={true}
+        duration={500}
         onClick={() => setMobileMenuOpen(false)}
       >
         {label}
       </ScrollLink>
     ) : (
-      <RouterLink 
-        to="/" 
+      <RouterLink
+        to="/"
         onClick={() => {
-          scrollAfterRouting(sectionId);
           setMobileMenuOpen(false);
+          setTimeout(() => {
+            document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
         }}
       >
         {label}
@@ -43,10 +51,13 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        {/* Use RouterLink for clickable logo */}
-        <RouterLink to="/" onClick={() => setMobileMenuOpen(false)}>
-          Adonai Innovations
-        </RouterLink>
+        {location.pathname === '/' ? (
+          <span onClick={scrollToTop}>Adonai Innovations</span>
+        ) : (
+          <RouterLink to="/" onClick={handleLogoClick}>
+            Adonai Innovations
+          </RouterLink>
+        )}
       </div>
 
       <div
@@ -60,11 +71,12 @@ const Navbar = () => {
 
       <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-menu' : ''}`}>
         <li>{renderNavLink('about', 'About')}</li>
+        <li>{renderNavLink('expertise', 'Expertise')}</li>
         <li>{renderNavLink('services', 'Services')}</li>
         <li>{renderNavLink('projects', 'Portfolio')}</li>
-        <li>{renderNavLink('expertise', 'Expertise')}</li>
-        {/* <li>{renderNavLink('apps', 'Apps')}</li> */}
-        {/* <li>{renderNavLink('support', 'Support')}</li> */}
+
+        {/* Add Contact Link Only in Mobile Menu */}
+        {isMobileMenuOpen && <li>{renderNavLink('contact', 'Contact')}</li>}
       </ul>
       <button className="contact-button">
         {renderNavLink('contact', 'Get in Touch')}

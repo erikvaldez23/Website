@@ -13,18 +13,24 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
 
-/* Logo */
+/* Logo Styles */
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #ffffff; /* White logo color for contrast */
+  color: #ffffff;
+  cursor: pointer; /* Default cursor style */
 }
+
+.logo:hover {
+  cursor: pointer; /* Switch to pointer on hover */
+  color: #ddd; /* Optional: Add a subtle color change for feedback */
+}
+
 
 .logo a {
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit color from .logo */
 }
-
 /* Navigation Links */
 .nav-links {
   display: flex;
@@ -113,7 +119,7 @@
   padding: 0.5rem 1.5rem;
   font-size: 1rem;
   color: #ffffff; /* White text */
-  border: 2px solid #ffffff; /* White border */
+  border: 3px solid #ffffff; /* White border */
   background: transparent; /* Transparent background */
   border-radius: 20px; /* Rounded button */
   cursor: pointer;

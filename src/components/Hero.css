@@ -160,20 +160,20 @@
 }
 
 .close-calendly-button {
-  position: fixed;
-  top: 60px; /* Slightly below the top bar */
-  right: 20px; /* Slightly away from the right edge */
-  background: none;
-  border: none;
-  font-size: 4rem;
-  color: #fff;
-  cursor: pointer;
-  z-index: 1100;
+  position: fixed; /* Position relative to the viewport */
+  top: 10px; /* Add padding from the top edge */
+  right: 10px; /* Add padding from the right edge */
+  background: none; /* Transparent background */
+  border: none; /* No border */
+  font-size: 2.5rem; /* Large size for visibility */
+  color: #fff; /* White color */
+  z-index: 1100; /* Ensure it is above the modal */
+  cursor: pointer; /* Pointer cursor for interactivity */
   transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 .close-calendly-button:hover {
-  color: #555; /* Slightly darker on hover */
+  color: #aaa; /* Slightly darker on hover */
 }
 
 /* Responsive Design */
@@ -188,12 +188,29 @@
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
+      url('../assets/dark-background.png') no-repeat center center/cover;
+  }
+  .hero-content {
+    text-align: center; /* Center-align text */
+    padding: 0 1rem; /* Add horizontal padding for better spacing */
+  }
+  
   .hero-title {
-    font-size: 2rem; /* Smaller font size for mobile */
+    font-size: 2.3rem; /* Further reduce title size */
+    margin-bottom: 1rem; /* Adjust spacing below title */
   }
 
   .hero-description {
-    font-size: 0.9rem; /* Smaller font size for mobile */
+    font-size: 1rem; /* Reduce description size */
+    line-height: 1.4; /* Compact line height */
+    margin-bottom: 1.5rem; /* Adjust spacing below description */
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 0.8rem; /* Reduce spacing between buttons */
   }
 
   .nav-links {
@@ -208,9 +225,14 @@
     display: none; /* Hide the button for smaller screens */
   }
   .calendly-iframe-container {
-    width: 95%;
-    height: 80vh;
-    top: 5%;
+    width: 100%; /* Take more space on mobile */
+    height: 80%; /* Adjust height for mobile */
+  }
+
+  .close-calendly-button {
+    font-size: 3rem; /* Larger size for mobile */
+    top: 5px; /* Closer to the edge for mobile */
+    right: -30px; /* Closer to the edge for mobile */
   }
 }
 
@@ -222,3 +244,20 @@ body {
 * {
   box-sizing: border-box; /* Prevent padding/borders from breaking layout */
 }
+
+/* Default Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hide Navbar When Calendly Modal is Active */
+body.hide-navbar .navbar {
+  transform: translateY(-100%); /* Slide the navbar up */
+  opacity: 0; /* Make the navbar invisible */
+  pointer-events: none; /* Disable interaction */
+}
+

@@ -48,7 +48,7 @@ const Projects = () => {
           }
         });
       },
-      { threshold: 0.5 } // Trigger when 20% of the section is visible
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
     );
 
     const cards = document.querySelectorAll('.animate-on-scroll');
@@ -60,7 +60,7 @@ const Projects = () => {
   return (
     <section className="projects-section">
       <div className="projects-container">
-        <h2 className="section-title">Featured Work</h2>
+        <h2 className="projects-section-title">Featured Work</h2>
         <div className="projects-grid">
           {projectData.map((project) => (
             <div className="project-card animate-on-scroll" key={project.id}>

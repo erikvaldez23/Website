@@ -1,11 +1,10 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Marquee from 'react-marquee-slider';
 import './FrameworkCarousel.css';
 import {
-  FaReact, FaNodeJs, FaJava, FaAngular, FaPython, FaPhp, FaDocker, FaGitAlt, FaAws,
+  FaReact, FaNodeJs, FaJava, FaPython, FaDocker, FaGitAlt, FaAws,
 } from 'react-icons/fa';
-import { SiFirebase, SiGraphql, SiShopify, SiMongodb, SiPostgresql, SiMysql, SiRedux, SiKubernetes, SiTailwindcss, SiTypescript, SiJavascript } from 'react-icons/si';
+import { SiFirebase, SiMongodb, SiMysql, SiKubernetes, SiTypescript, SiJavascript } from 'react-icons/si';
 
 const frameworksRow1 = [
   { name: 'React', icon: <FaReact />, url: 'https://reactjs.org/' },
@@ -25,7 +24,28 @@ const frameworksRow2 = [
   { name: 'JavaScript', icon: <SiJavascript />, url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
   { name: 'Git', icon: <FaGitAlt />, url: 'https://git-scm.com/' },
 ];
+
 const FrameworkCarousel = () => {
+  const [velocity, setVelocity] = useState(15); // Default velocity for desktop
+
+  // Adjust velocity based on screen width
+  const updateVelocity = () => {
+    if (window.innerWidth <= 768) {
+      setVelocity(4); // Slower for mobile devices
+    } else {
+      setVelocity(15); // Default for larger screens
+    }
+  };
+
+  // Attach and clean up the resize event listener
+  useEffect(() => {
+    updateVelocity(); // Set initial velocity
+    window.addEventListener('resize', updateVelocity);
+    return () => {
+      window.removeEventListener('resize', updateVelocity);
+    };
+  }, []);
+
   const fillRow = (row) => {
     const MIN_ITEMS = 30; // Minimum number of items to fill a row
     const repeatedRow = [...row];
@@ -46,7 +66,7 @@ const FrameworkCarousel = () => {
       </p>
       <div className="marquee-wrapper">
         {/* First Row */}
-        <Marquee velocity={20} loop={true} direction="ltr">
+        <Marquee velocity={velocity} loop={true} direction="ltr">
           {fullRow1.map((framework, index) => (
             <div
               key={`${framework.name}-${index}`}
@@ -60,7 +80,7 @@ const FrameworkCarousel = () => {
         </Marquee>
 
         {/* Second Row */}
-        <Marquee velocity={15} loop={true} direction="rtl">
+        <Marquee velocity={velocity} loop={true} direction="rtl">
           {fullRow2.map((framework, index) => (
             <div
               key={`${framework.name}-${index}`}

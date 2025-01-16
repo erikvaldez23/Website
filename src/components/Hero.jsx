@@ -4,24 +4,28 @@ import "./Hero.css";
 const Hero = () => {
   const [showCalendly, setShowCalendly] = useState(false);
 
-  // Disable scrolling when Calendly modal is open
   useEffect(() => {
     if (showCalendly) {
       document.body.style.overflow = "hidden"; // Prevent scrolling
+      document.body.classList.add("hide-navbar"); // Add class to hide navbar
     } else {
       document.body.style.overflow = "auto"; // Restore scrolling
+      document.body.classList.remove("hide-navbar"); // Remove class
     }
 
     return () => {
-      document.body.style.overflow = "auto"; // Cleanup on unmount
+      document.body.style.overflow = "auto";
+      document.body.classList.remove("hide-navbar");
     };
   }, [showCalendly]);
 
   const scrollToAbout = () => {
     document.getElementById("about")?.scrollIntoView({
       behavior: "smooth",
+      block: "start", // Aligns the element to the top of the viewport
     });
   };
+  
 
   return (
     <section className="hero-section">
@@ -49,39 +53,32 @@ const Hero = () => {
         </div>
 
         {showCalendly && (
-          <>
-            {/* Overlay for clicking outside the iframe */}
+          <div
+            className="calendly-overlay"
+            onClick={() => setShowCalendly(false)}
+          >
             <div
-              className="calendly-overlay"
-              onClick={() => setShowCalendly(false)} // Close on clicking overlay
+              className="calendly-iframe-container"
+              onClick={(e) => e.stopPropagation()}
             >
-              {/* Iframe container */}
-              <div
-                className="calendly-iframe-container"
-                onClick={(e) => e.stopPropagation()} // Prevent overlay close when clicking inside
+              <button
+                className="close-calendly-button"
+                onClick={() => setShowCalendly(false)}
               >
-                {/* Close button */}
-                <button
-                  className="close-calendly-button"
-                  onClick={() => setShowCalendly(false)}
-                >
-                  &times; {/* "X" Icon */}
-                </button>
-
-                {/* Embed the Calendly iframe */}
-                <iframe
-                  src="https://calendly.com/erikkvaldez/30min"
-                  title="Schedule a Meeting"
-                  width="100%"
-                  height="100%"
-                  style={{
-                    border: "none",
-                    borderRadius: "8px",
-                  }}
-                ></iframe>
-              </div>
+                &times;
+              </button>
+              <iframe
+                src="https://calendly.com/erikkvaldez/30min"
+                title="Schedule a Meeting"
+                width="100%"
+                height="100%"
+                style={{
+                  border: "none",
+                  borderRadius: "8px",
+                }}
+              ></iframe>
             </div>
-          </>
+          </div>
         )}
       </div>
     </section>

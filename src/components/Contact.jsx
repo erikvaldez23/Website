@@ -54,7 +54,7 @@ const Contact = () => {
           }
         });
       },
-      { threshold: 0.4 } 
+      { threshold: 0.2 } 
     );
 
     const target = document.querySelector('.contact-section');
@@ -68,7 +68,7 @@ const Contact = () => {
       <div className="contact-container">
         {/* Form */}
         <div className="contact-form-container animate-on-scroll">
-          <h2 className="section-title animate-on-scroll">Get In Touch</h2>
+          <h2 className="contact-section-title animate-on-scroll">Get In Touch</h2>
           <form className="contact-form animate-on-scroll" onSubmit={handleSubmit}>
             <div className="form-group animate-on-scroll">
               <input
