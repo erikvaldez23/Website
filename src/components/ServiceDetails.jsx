@@ -110,7 +110,7 @@ const ServiceDetails = () => {
         <h1>Service Not Found</h1>
         <button
           className="service-details-back-button"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/Website/")}
         >
           Back to Services
         </button>

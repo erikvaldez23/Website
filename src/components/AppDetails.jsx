@@ -56,7 +56,7 @@ const AppDetails = () => {
       />
       <p>{app.description}</p>
       <p>{app.details}</p>
-      <a href="/" style={{ textDecoration: 'none', color: '#007bff' }}>
+      <a href="/Website/" style={{ textDecoration: 'none', color: '#007bff' }}>
         Back to Home
       </a>
     </div>

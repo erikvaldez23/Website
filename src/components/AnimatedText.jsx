@@ -56,7 +56,7 @@ const AnimatedText = () => {
   }, []);
 
   const handleViewAllCaseStudies = () => {
-    navigate("/");
+    navigate("/Website/");
     setTimeout(() => {
       const projectsSection = document.getElementById("projects");
       if (projectsSection) {
