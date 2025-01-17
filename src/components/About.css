@@ -1,8 +1,20 @@
+:root {
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+  --primary-color: #007bff;
+  --secondary-color: #ffffff;
+  --bg-color-dark: #000000;
+  --bg-color-light: #333;
+  --text-light: #cccccc;
+  --card-shadow: rgba(0, 0, 0, 0.2);
+}
+
 .about-section {
   padding: 4rem 2rem;
-  background-color: #000; 
-  color: #fff;
+  background-color: #000;
+  color: var(--text-light); 
   text-align: center;
+  font-family: var(--font-primary); 
 }
 
 .about-container {
@@ -11,19 +23,22 @@
 }
 
 .about-heading {
-  margin-bottom: 3rem; 
+  margin-bottom: 3rem;
+  font-family: var(--font-secondary); 
 }
 
 .section-title {
   font-size: 2rem;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  color: var(--secondary-color); 
 }
 
 .about-overview {
-  font-size: 4rem; 
+  font-size: 4rem;
   font-weight: bold;
   line-height: 1.3;
+  color: var(--secondary-color); 
 }
 
 .about-content {
@@ -36,31 +51,34 @@
 .about-column {
   flex: 1;
 }
+
 .column-list {
   list-style: none;
   padding: 0;
-  font-size: 1.55rem; 
-  line-height: 2; 
-  font-weight: 500; 
-  color: #a6a6a6;
+  font-size: 1.55rem;
+  line-height: 2;
+  font-weight: 500;
+  color: var(--text-light);
 }
 
 .column-title {
-  font-size: 2rem; 
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: var(--primary-color); 
 }
+
 /* Initial state: hidden and translated */
 .hidden {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.5s, transform 0.5s; 
+  transition: opacity 0.5s, transform 0.5s;
 }
 
 .animate {
   animation: fadeInUp 1s ease-out forwards;
 }
-/* Keyframes for fading in from the bottom */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -72,40 +90,39 @@
   }
 }
 
-
-
 @media (max-width: 768px) {
   .about-section {
-    padding: 1.5rem 1rem; 
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem; 
   }
+
   .about-overview {
-    font-size: 2rem; 
+    font-size: 2rem;
   }
+
   .column-list {
     font-size: 1rem;
   }
 
   .column-title {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
   }
 
   .about-heading {
-    margin-bottom: 1.5rem; 
+    margin-bottom: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .about-section {
-    padding: 1rem; 
+    padding: 1rem;
   }
 
   .about-overview {
-    font-size: 1.8rem; 
+    font-size: 1.8rem;
   }
 
   .about-content {
-    gap: 1rem; 
+    gap: 1rem;
   }
-  
 }
-

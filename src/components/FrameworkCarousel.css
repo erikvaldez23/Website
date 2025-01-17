@@ -29,6 +29,7 @@
   }
   
   .carousel-subtitle {
+    font-family: var(--font-secondary);
     font-size: 1.4rem;
     margin-bottom: 40px;
     color: #bbb; 
@@ -51,8 +52,13 @@
     text-align: center; 
     cursor: pointer; 
     transition: transform 0.2s ease, box-shadow 0.2s ease; 
-    width: 200px; 
-    height: auto; 
+    width: 230px; 
+    height: 230px; 
+    overflow: hidden; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
   }
   
   .framework-card:hover {
@@ -70,7 +76,12 @@
     font-size: 1.2rem; 
     font-weight: 600;
     color: #ddd; 
-  }
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap; 
+    width: 100%;
+    text-align: center;
+  } 
   
   @media (max-width: 1024px) {
     .framework-carousel {

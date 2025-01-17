@@ -112,7 +112,7 @@ const ProjectDetails = () => {
   return (
     <div className="project-details-page">
       {/* Hero Section */}
-      <div className="project-hero-section">
+      <div className="project-hero-section" id="hero">
         <h1 className="project-hero-title">{project.title}</h1>
       </div>
 

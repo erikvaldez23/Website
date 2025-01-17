@@ -40,13 +40,19 @@ const Footer = () => {
 
       {/* Copyright and Domain */}
       <div className="footer-bottom">
-        <p>
-          &copy; {new Date().getFullYear()} Adonai Innovations. All rights reserved. | 
-          <a href="https://www.adonaiinnovations.com" target="_blank" rel="noopener noreferrer">
-            www.adonaiinnovations.com
-          </a>
-        </p>
-      </div>
+  <p>
+    &copy; {new Date().getFullYear()} Adonai Innovations. All rights reserved.
+    <span className="separator"> | </span>
+    <a href="https://www.adonaiinnovations.com" target="_blank" rel="noopener noreferrer">
+      www.adonaiinnovations.com
+    </a>
+    <span className="separator"> | </span>
+    <RouterLink to="/privacy-policy" className="privacy-link">
+      Privacy Policy
+    </RouterLink>
+  </p>
+</div>
+
     </footer>
   );
 };

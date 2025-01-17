@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Marquee from 'react-marquee-slider';
 import './FrameworkCarousel.css';
-import {
-  FaReact, FaNodeJs, FaJava, FaPython, FaDocker, FaGitAlt, FaAws,
-} from 'react-icons/fa';
-import { SiFirebase, SiMongodb, SiMysql, SiKubernetes, SiTypescript, SiJavascript } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaJava, FaPython, FaDocker, FaAws, FaGitAlt } from 'react-icons/fa';
+import { SiFirebase, SiMongodb, SiMysql, SiKubernetes, SiTypescript, SiJavascript, SiOpenai, SiKotlin, SiSwift, SiApple, SiAndroid } from 'react-icons/si';
+import { PiStack } from "react-icons/pi";
 
 const frameworksRow1 = [
   { name: 'React', icon: <FaReact />, url: 'https://reactjs.org/' },
@@ -13,6 +12,12 @@ const frameworksRow1 = [
   { name: 'Python', icon: <FaPython />, url: 'https://www.python.org/' },
   { name: 'Firebase', icon: <SiFirebase />, url: 'https://firebase.google.com/' },
   { name: 'AWS', icon: <FaAws />, url: 'https://aws.amazon.com/' },
+  { name: 'ChatGPT', icon: <SiOpenai />, url: 'https://openai.com/chatgpt' }, // New Entry
+  { name: 'AI', icon: <SiOpenai />, url: 'https://openai.com' }, // New Entry
+  { name: 'Kotlin', icon: <SiKotlin />, url: 'https://kotlinlang.org' },
+  { name: 'SwiftUI', icon: <SiSwift />, url: 'https://www.swift.org/getting-started/swiftui/'},
+  { name: 'Swift', icon: <SiSwift />, url: 'https://www.swift.org'},
+  { name: 'Combine', icon: <PiStack />, url: 'https://developer.apple.com/documentation/combine' },
 ];
 
 const frameworksRow2 = [
@@ -23,6 +28,9 @@ const frameworksRow2 = [
   { name: 'TypeScript', icon: <SiTypescript />, url: 'https://www.typescriptlang.org/' },
   { name: 'JavaScript', icon: <SiJavascript />, url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
   { name: 'Git', icon: <FaGitAlt />, url: 'https://git-scm.com/' },
+  { name: 'iOS', icon: <SiApple />, url: 'https://www.apple.com/ios/ios-18/' },
+  { name: 'Android', icon: <SiAndroid />, url: 'https://www.android.com' },
+  { name: 'Jetpack Compose', icon: <PiStack />, url: 'https://developer.android.com/compose' },
 ];
 
 const FrameworkCarousel = () => {

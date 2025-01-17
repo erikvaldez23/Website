@@ -59,28 +59,32 @@ const Projects = () => {
 
   return (
     <section className="projects-section">
-      <div className="projects-container">
-        <h2 className="projects-section-title">Featured Work</h2>
-        <div className="projects-grid">
-          {projectData.map((project) => (
-            <div className="project-card animate-on-scroll" key={project.id}>
-              <img
-                src={project.image}
-                alt={project.title}
-                className="project-image"
-              />
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                <Link to={project.url} className="projects-learn-button">
-                  Learn More
-                </Link>
-              </div>
-            </div>
-          ))}
+  <div className="projects-container">
+    <h2 className="projects-section-title">Featured Work</h2>
+    <p className="projects-section-subtitle">
+      A collection of projects showcasing creativity, innovation, and problem-solving skills.
+    </p>
+    <div className="projects-grid">
+      {projectData.map((project) => (
+        <div className="project-card animate-on-scroll" key={project.id}>
+          <img
+            src={project.image}
+            alt={project.title}
+            className="project-image"
+          />
+          <div className="project-content">
+            <h3 className="project-title">{project.title}</h3>
+            <p className="project-description">{project.description}</p>
+            <Link to={project.url} className="projects-learn-button">
+              Learn More
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</section>
+
   );
 };
 

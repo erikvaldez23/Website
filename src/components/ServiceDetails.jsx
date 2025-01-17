@@ -121,7 +121,7 @@ const ServiceDetails = () => {
   return (
     <div className="service-details-page">
       {/* Hero Section */}
-      <div className="service-hero-section">
+      <div className="service-hero-section" id="hero">
         <h1 className="service-hero-title">{service.title}</h1>
       </div>
 

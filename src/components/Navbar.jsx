@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isHeroOutOfView, setHeroOutOfView] = useState(false);
   const location = useLocation();
 
   const toggleMobileMenu = () => {
@@ -48,8 +49,37 @@ const Navbar = () => {
     );
   };
 
+  useEffect(() => {
+    // Function to handle the IntersectionObserver logic
+    const setupObserver = () => {
+      const heroSection = document.getElementById('hero'); // Get the hero section by ID
+      if (!heroSection) {
+        setHeroOutOfView(true); // If there's no hero (sub-URL), make navbar solid
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setHeroOutOfView(!entry.isIntersecting); // Update state based on hero visibility
+        },
+        {
+          root: null, // Observe relative to the viewport
+          threshold: 0, // Trigger as soon as any part of the hero section exits the viewport
+        }
+      );
+
+      observer.observe(heroSection);
+
+      return () => {
+        observer.disconnect(); // Cleanup observer on unmount or route change
+      };
+    };
+
+    setupObserver(); // Run on component mount and route change
+  }, [location.pathname]); // Re-run the effect when the route changes
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isHeroOutOfView ? 'scrolled' : ''}`}>
       <div className="logo">
         {location.pathname === '/' ? (
           <span onClick={scrollToTop}>Adonai Innovations</span>
@@ -75,7 +105,6 @@ const Navbar = () => {
         <li>{renderNavLink('services', 'Services')}</li>
         <li>{renderNavLink('projects', 'Portfolio')}</li>
 
-        {/* Add Contact Link Only in Mobile Menu */}
         {isMobileMenuOpen && <li>{renderNavLink('contact', 'Contact')}</li>}
       </ul>
       <button className="contact-button">

@@ -30,6 +30,14 @@
   position: relative;
   animation: fadeInSlideUp 1s ease-out;
 }
+.projects-section-subtitle {
+  font-size: 1.4rem; 
+  font-family: var(--font-secondary);
+  color: #cccccc; 
+  margin: 1rem 0 2rem; 
+  text-align: center; 
+}
+
 
 .projects-grid {
   display: grid;
@@ -76,12 +84,14 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  font-family: var(--font-primary);
 }
 
 .project-description {
   font-size: 1rem;
   color: #ddd;
   line-height: 1.6;
+  font-family: var(--font-secondary);
 }
 
 .projects-learn-button {

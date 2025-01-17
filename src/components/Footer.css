@@ -1,72 +1,87 @@
 .footer {
-    background-color: #000000; 
-    color: #fff; 
-    padding: 1rem 5%;
-  }
-  
+  background-color: var(--bg-color-dark);
+  color: var(--secondary-color);
+  padding: 1rem 5%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.footer-logo a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.footer-logo span {
+  color: var(--primary-color);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid var(--bg-color-light);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.footer-bottom a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+.footer-bottom a:hover {
+  color: var(--primary-color);
+}
+
+.privacy-link {
+  color: #ccc !important;
+  text-decoration: none;
+}
+
+.privacy-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.separator {
+  margin-left: 10px;
+  margin-right: 1px;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
   .footer-content {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff; 
-  }
-  .footer-logo a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-  }
-  
-  .footer-logo span {
-    color: #007bff; 
-  }
-  
-  .footer-social {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .footer-social a {
-    color: #fff; 
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-social a:hover {
-    color: #007bff;
-  }
-  
-  .footer-bottom {
+    flex-direction: column;
     text-align: center;
-    border-top: 1px solid #444;
-    padding-top: 1rem;
-    font-size: 0.9rem;
-    color: #ccc;
   }
-  
-  .footer-bottom a {
-    color: #007bff;
-    text-decoration: none;
-    margin-left: 0.5rem;
+
+  .footer-social {
+    margin-top: 1rem;
   }
-  
-  .footer-bottom a:hover {
-    color: #007bff; 
-  }
-  
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .footer-social {
-      margin-top: 1rem;
-    }
-  }
-  
+}

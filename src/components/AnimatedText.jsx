@@ -6,8 +6,8 @@ import logo from '../assets/adonai-logo-1.png';
 const AnimatedText = () => {
   const staticSentencePart1 = "Looking for a dedicated team";
   const staticSentencePart2 = "to accelerate your company's";
-  const animationWords = ["success?", "expansion?", "innovation?", "performance?"];
-  const interval = 4000; // Change interval in milliseconds
+  const animationWords = ["success?", "expansion?", "innovation?", "performance?", "dreams?"];
+  const interval = 3000; // Change interval in milliseconds
 
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [showCalendly, setShowCalendly] = useState(false);
@@ -107,7 +107,7 @@ const AnimatedText = () => {
                 &times;
               </button>
               <iframe
-                src="https://calendly.com/erikkvaldez/30min"
+                src="https://calendly.com/adonaiinnovations-support/30min"
                 title="Schedule a Meeting"
                 width="100%"
                 height="100%"

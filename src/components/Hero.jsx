@@ -68,7 +68,7 @@ const Hero = () => {
                 &times;
               </button>
               <iframe
-                src="https://calendly.com/erikkvaldez/30min"
+                src="https://calendly.com/adonaiinnovations-support/30min"
                 title="Schedule a Meeting"
                 width="100%"
                 height="100%"
