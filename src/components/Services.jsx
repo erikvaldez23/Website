@@ -1,32 +1,32 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaCode, FaMobileAlt, FaCloud, FaLaptopCode } from "react-icons/fa";
+import { SiApple, SiAndroid, SiOpenai} from "react-icons/si";
 import "./services.css";
 
 const services = [
   {
-    id: "custom-software-development",
-    title: "Custom Software Development",
-    description: "Building tailored software solutions to meet specific business needs.",
-    icon: <FaCode />,
+    id: "ios-development",
+    title: "iOS Development",
+    description: "Creating high-performance iOS apps with AI-powered features for seamless user experiences.",
+    icon: <SiApple />,
   },
   {
-    id: "mobile-app-development",
-    title: "Mobile App Development",
-    description: "Designing and developing mobile applications for Android, iOS, and cross-platform solutions.",
-    icon: <FaMobileAlt />,
+    id: "android-development",
+    title: "Android Development",
+    description: "Building scalable Android apps with smart AI integrations for enhanced functionality.",
+    icon: <SiAndroid />,
   },
   {
-    id: "web-development",
-    title: "Web Development",
-    description: "Creating modern, responsive, and scalable web applications.",
-    icon: <FaLaptopCode />,
+    id: "chat-gpt",
+    title: "Chat-GPT",
+    description: "Integrating ChatGPT to deliver intelligent, conversational app experiences",
+    icon: <SiOpenai />,
   },
   {
-    id: "cloud-integration",
-    title: "Cloud Integration",
-    description: "Streamlining business operations through cloud-based solutions.",
-    icon: <FaCloud />,
+    id: "open-ai",
+    title: "OpenAI",
+    description: "Enhancing apps with OpenAI-driven features for smarter interactions and automation.",
+    icon: <SiOpenai />,
   },
 ];
 

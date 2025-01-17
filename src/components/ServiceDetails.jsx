@@ -5,8 +5,8 @@ import Contact from './Contact'
 import "./ServiceDetails.css";
 
 const servicesData = {
-  "custom-software-development": {
-    title: "Custom Software Development",
+  "ios-development": {
+    title: "iOS Development",
     description:
       "We provide custom software solutions tailored to your needs, helping businesses achieve scalability and operational efficiency.",
     features: [
@@ -28,8 +28,8 @@ const servicesData = {
       },
     ],
   },
-  "mobile-app-development": {
-    title: "Mobile App Development",
+  "android-development": {
+    title: "Android Development",
     description:
       "Our mobile app development services deliver seamless user experiences on iOS and Android, helping businesses engage their audience and achieve their goals.",
     features: [
@@ -51,8 +51,8 @@ const servicesData = {
       },
     ],
   },
-  "web-development": {
-    title: "Web Development",
+  "open-ai": {
+    title: "OpenAI",
     description:
       "From responsive websites to complex web applications, we build fast, secure, and user-friendly solutions tailored to your business needs.",
     features: [
@@ -74,8 +74,8 @@ const servicesData = {
       },
     ],
   },
-  "cloud-integration": {
-    title: "Cloud Integration",
+  "chat-gpt": {
+    title: "Chat-GPT",
     description:
       "We help businesses leverage the power of the cloud for collaboration, scalability, and data security.",
     features: [
