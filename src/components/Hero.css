@@ -1,15 +1,14 @@
-/* Hero Section */
 .hero-section {
   position: relative;
   width: 100%;
-  height: 95vh; /* Full viewport height */
+  height: 95vh;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
     url('../assets/dark-background.png') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
-  overflow: hidden; /* Hide overflowing elements during animation */
+  overflow: hidden;
 }
 
 .hero-section::after {
@@ -18,138 +17,127 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px; /* Adjust height to control gradient size */
+  height: 100px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
-  z-index: 1; /* Ensure it appears on top of the hero background */
+  z-index: 1;
 }
 
 .hero-content {
-  position: relative; /* Ensure content stays above the gradient */
+  position: relative;
   text-align: left;
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Hero Title */
 .hero-title {
-  font-size: 3rem; /* Default size for larger screens */
+  font-size: 3rem;
   font-weight: bold;
-  line-height: 1.2; /* Adjust line spacing */
-  text-transform: uppercase; /* Uppercase text */
+  line-height: 1.2;
+  text-transform: uppercase;
   margin-bottom: 1.5rem;
-  opacity: 0; /* Start invisible */
-  transform: translateY(50px); /* Start slightly below its final position */
-  animation: fadeInUp 1.5s ease-out forwards; /* Animation for title */
-  animation-delay: 0.3s; /* Start animation after 0.3 seconds */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.5s ease-out forwards;
+  animation-delay: 0.3s;
 }
 
-/* Hero Description */
 .hero-description {
   font-size: 1.5rem;
-  line-height: 1.6; /* Adjust line spacing for better readability */
-  opacity: 0; /* Start invisible */
-  transform: translateY(50px); /* Start slightly below its final position */
-  animation: fadeInUp 1.5s ease-out forwards; /* Animation for description */
-  animation-delay: 0.6s; /* Start animation after 0.6 seconds */
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.5s ease-out forwards;
+  animation-delay: 0.6s;
 }
 
-/* Hero Buttons Container */
 .hero-buttons {
   display: flex;
-  gap: 1rem; /* Space between the buttons */
-  margin-top: 1.5rem; /* Add spacing above the buttons */
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-/* Learn More Button */
 .hero-learn-more-button {
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  color: #fff; /* White text */
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
-  border: 2px solid #fff; /* White outline */
+  border: 2px solid #fff;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-
-  /* Animation styles */
-  opacity: 0; /* Start invisible */
-  transform: translateY(50px); /* Start slightly below its final position */
-  animation: fadeInUp 1.5s ease-out forwards; /* Apply the fadeInUp animation */
-  animation-delay: 0.9s; /* Delay for button animation */
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.5s ease-out forwards;
+  animation-delay: 0.9s;
 }
 
 .hero-learn-more-button:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
-  color: #fff; /* Ensure text stays white */
-  transform: scale(1.05); /* Slightly enlarge the button on hover */
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transform: scale(1.05);
 }
 
-/* Schedule Meeting Button */
 .schedule-meeting-button {
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  color: #fff; /* White text */
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
-  border: 2px solid #fff; /* White outline */
+  border: 2px solid #fff;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-
-  /* Animation styles */
-  opacity: 0; /* Start invisible */
-  transform: translateY(50px); /* Start slightly below its final position */
-  animation: fadeInUp 1.5s ease-out forwards; /* Apply the fadeInUp animation */
-  animation-delay: 0.9s; /* Delay for button animation */
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.5s ease-out forwards;
+  animation-delay: 0.9s;
 }
 
 .schedule-meeting-button:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
-  color: #fff; /* Ensure text stays white */
-  transform: scale(1.05); /* Slightly enlarge the button on hover */
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transform: scale(1.05);
 }
 
 .schedule-meeting-button:focus {
-  outline: none; /* Remove default focus outline */
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Add a subtle glow effect */
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
-/* Animation Keyframes */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(50px); /* Start below the final position */
+    transform: translateY(50px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Move to the final position */
+    transform: translateY(0);
   }
 }
 
-/* Calendly Overlay */
 .calendly-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  z-index: 999; /* Behind the iframe but above everything else */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
   display: flex;
-  justify-content: center; /* Center the iframe horizontally */
-  align-items: center; /* Center the iframe vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 .calendly-iframe-container {
   position: relative;
-  width: 90%; /* Make iframe larger */
-  height: 80%; /* Adjust size */
-  max-width: 600px; /* Limit size on larger screens */
-  max-height: 850px; /* Limit height */
-  background: #ffffff; /* White background for container */
-  border-radius: 8px; /* Smooth corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  z-index: 1000; /* Above the overlay */
+  width: 90%;
+  height: 80%;
+  max-width: 600px;
+  max-height: 850px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
   overflow: hidden;
 }
 
@@ -160,30 +148,29 @@
 }
 
 .close-calendly-button {
-  position: fixed; /* Position relative to the viewport */
-  top: 10px; /* Add padding from the top edge */
-  right: 10px; /* Add padding from the right edge */
-  background: none; /* Transparent background */
-  border: none; /* No border */
-  font-size: 2.5rem; /* Large size for visibility */
-  color: #fff; /* White color */
-  z-index: 1100; /* Ensure it is above the modal */
-  cursor: pointer; /* Pointer cursor for interactivity */
-  transition: color 0.3s ease; /* Smooth hover effect */
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #fff;
+  z-index: 1100;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .close-calendly-button:hover {
-  color: #aaa; /* Slightly darker on hover */
+  color: #aaa;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .hero-title {
-    font-size: 2.5rem; /* Reduce font size for medium screens */
+    font-size: 2.5rem;
   }
 
   .hero-description {
-    font-size: 1rem; /* Adjust description size */
+    font-size: 1rem;
   }
 }
 
@@ -193,59 +180,50 @@
       url('../assets/dark-background.png') no-repeat center center/cover;
   }
   .hero-content {
-    text-align: center; /* Center-align text */
-    padding: 0 1rem; /* Add horizontal padding for better spacing */
+    text-align: center;
+    padding: 0 1rem;
   }
-  
   .hero-title {
-    font-size: 2.3rem; /* Further reduce title size */
-    margin-bottom: 1rem; /* Adjust spacing below title */
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
   }
-
   .hero-description {
-    font-size: 1rem; /* Reduce description size */
-    line-height: 1.4; /* Compact line height */
-    margin-bottom: 1.5rem; /* Adjust spacing below description */
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
   }
-
   .hero-buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 0.8rem; /* Reduce spacing between buttons */
+    flex-direction: column;
+    gap: 0.8rem;
   }
-
   .nav-links {
-    display: none; /* Hide links on smaller screens */
+    display: none;
   }
-
   .hamburger-menu {
-    display: flex; /* Show hamburger menu */
+    display: flex;
   }
-
   .contact-button {
-    display: none; /* Hide the button for smaller screens */
+    display: none;
   }
   .calendly-iframe-container {
-    width: 100%; /* Take more space on mobile */
-    height: 80%; /* Adjust height for mobile */
+    width: 100%;
+    height: 80%;
   }
-
   .close-calendly-button {
-    font-size: 3rem; /* Larger size for mobile */
-    top: 5px; /* Closer to the edge for mobile */
-    right: -30px; /* Closer to the edge for mobile */
+    font-size: 3rem;
+    top: 5px;
+    right: -30px;
   }
 }
 
-/* Global Reset */
 body {
-  margin: 0; /* Remove body margin to prevent overflow */
+  margin: 0;
 }
 
 * {
-  box-sizing: border-box; /* Prevent padding/borders from breaking layout */
+  box-sizing: border-box;
 }
 
-/* Default Navbar Styles */
 .navbar {
   position: fixed;
   top: 0;
@@ -254,10 +232,8 @@ body {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Hide Navbar When Calendly Modal is Active */
 body.hide-navbar .navbar {
-  transform: translateY(-100%); /* Slide the navbar up */
-  opacity: 0; /* Make the navbar invisible */
-  pointer-events: none; /* Disable interaction */
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
-

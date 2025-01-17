@@ -10,17 +10,17 @@
 
 /* Limit the width of the content */
 .apps-section > * {
-  max-width: 1550px; /* Set the maximum width of the content */
-  width: 100%; /* Ensure content scales within the max-width */
+  max-width: 1550px; 
+  width: 100%; 
   margin: 0 auto;
   text-align: left;
 }
 
 /* Title */
 .section-title {
-  font-size: 2.5rem; /* Slightly larger for better visibility */
+  font-size: 2.5rem; 
   font-weight: bold;
-  color: #fff; /* Updated for better contrast */
+  color: #fff; 
   margin-bottom: 2rem;
 }
 
@@ -30,7 +30,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   justify-items: center;
-  width: 100%; /* Ensure the grid takes full width within max-width */
+  width: 100%;
 }
 
 /* App Card */
@@ -41,8 +41,8 @@
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%; /* Ensure the card fills its grid space */
-  max-width: 400px; /* Set a maximum width for each card */
+  width: 100%; 
+  max-width: 400px; 
 }
 
 .app-card:hover {
@@ -84,7 +84,7 @@
   font-weight: bold;
   color: #000;
   background-color: #fff;
-  border: 2px solid #000; /* Add a white outline */
+  border: 2px solid #000; 
   border-radius: 4px;
   text-decoration: none;
   transition: background-color 0.3s ease;
@@ -106,12 +106,12 @@
   }
 
   .app-details {
-    text-align: center; /* Center align on smaller screens */
+    text-align: center; 
   }
 }
 
 @media (max-width: 480px) {
   .app-card {
-    max-width: 100%; /* Allow cards to take up full width on very small screens */
+    max-width: 100%; 
   }
 }

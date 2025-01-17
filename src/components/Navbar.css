@@ -1,72 +1,68 @@
-/* General Navbar Styles */
 .navbar {
-  width: 100vw; /* Full viewport width */
-  position: fixed; /* Fix to the top of the page */
+  width: 100vw; 
+  position: fixed; 
   top: 0;
   left: 0;
-  z-index: 1000; /* Keeps it above all other content */
+  z-index: 1000; 
   display: flex;
-  justify-content: space-between; /* Space between logo and links */
-  align-items: center; /* Vertically center items */
-  padding: 1rem 2rem; /* Add spacing around the navbar */
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05)); /* Gradient background */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 1rem 2rem; 
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.05)); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-/* Logo Styles */
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
   color: #ffffff;
-  cursor: pointer; /* Default cursor style */
+  cursor: pointer;
 }
 
 .logo:hover {
-  cursor: pointer; /* Switch to pointer on hover */
-  color: #ddd; /* Optional: Add a subtle color change for feedback */
+  cursor: pointer; 
+  color: #ddd; 
 }
 
 
 .logo a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit color from .logo */
+  text-decoration: none; 
+  color: inherit; 
 }
-/* Navigation Links */
 .nav-links {
   display: flex;
-  gap: 1.8rem; /* Space between links */
+  gap: 1.8rem;
   list-style: none;
+  margin-left: -140px;
 }
 
 .nav-links li a {
-  text-decoration: none; /* Remove default underline */
-  color: #ffffff; /* White links for contrast */
+  text-decoration: none;
+  color: #ffffff; 
   font-size: 1.8rem;
   font-weight: bold;
-  position: relative; /* Needed for positioning the pseudo-element */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  position: relative; 
+  cursor: pointer; 
 }
 
 
 .nav-links li a::after {
-  content: ''; /* Empty content for the pseudo-element */
+  content: ''; 
   position: absolute;
-  bottom: -4px; /* Position underline slightly below the text */
+  bottom: -4px; 
   left: 0;
-  width: 0; /* Start with no underline */
-  height: 2px; /* Thickness of the underline */
-  background-color: #ffffff; /* White underline */
-  transition: width 0.3s ease; /* Smoothly expand the underline */
+  width: 0; 
+  height: 2px; 
+  background-color: #ffffff;
+  transition: width 0.3s ease; 
 }
 
 .nav-links li a:hover::after {
-  width: 100%; /* Expand the underline to cover the full width of the text */
+  width: 100%; 
 }
 
-
-/* Hamburger Menu for Mobile */
 .hamburger-menu {
-  display: none; /* Hidden by default on larger screens */
+  display: none; 
   flex-direction: column;
   cursor: pointer;
   gap: 0.3rem;
@@ -76,7 +72,7 @@
   display: block;
   width: 25px;
   height: 3px;
-  background-color: #ffffff; /* White for visibility */
+  background-color: #ffffff;
 }
 
 .hamburger-menu.open span:nth-child(1) {
@@ -91,22 +87,21 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Mobile Navigation Links (Dropdown) */
 .nav-links.mobile-menu {
-  display: flex; /* Show links in dropdown */
-  flex-direction: column; /* Stack links vertically */
+  display: flex; 
+  flex-direction: column; 
   position: absolute;
-  top: 70px; /* Below the navbar */
+  top: 70px; 
   right: 0;
   width: 200px;
-  background: rgba(0, 0, 0, 0.8); /* Dark background for dropdown */
+  background: rgba(0, 0, 0, 0.8); 
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1rem;
 }
 
 .nav-links.mobile-menu li a {
-  color: #ffffff; /* White text for mobile menu */
+  color: #ffffff; 
   margin-bottom: 1rem;
 }
 
@@ -114,44 +109,42 @@
   margin-bottom: 0;
 }
 
-/* Contact Button */
+
 .contact-button {
   padding: 0.5rem 1.5rem;
   font-size: 1rem;
-  color: #ffffff; /* White text */
-  border: 3px solid #ffffff; /* White border */
-  background: transparent; /* Transparent background */
-  border-radius: 20px; /* Rounded button */
+  color: #ffffff; 
+  border: 3px solid #ffffff; 
+  background: transparent; 
+  border-radius: 20px; 
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .contact-button:hover {
-  background: #fff; /* White background on hover */
-  color: #000; /* Dark text on hover */
+  background: #fff; 
+  color: #000; 
   cursor: pointer;
 }
 
-/* Responsive Navbar Styles */
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* Hide links on smaller screens */
+    display: none; 
   }
 
   .hamburger-menu {
-    display: flex; /* Show hamburger menu */
+    display: flex; 
   }
 
   .contact-button {
-    display: none; /* Hide the button for smaller screens */
+    display: none; 
   }
 }
 
-/* Global Reset */
 body {
-  margin: 0; /* Remove body margin to prevent overflow */
+  margin: 0;
 }
 
 * {
-  box-sizing: border-box; /* Prevent padding/borders from breaking layout */
+  box-sizing: border-box; 
 }

@@ -17,7 +17,7 @@
 
 /* Heading */
 .animation-heading {
-  font-family: 'Arial', sans-serif; /* Clean, bold font */
+  font-family: 'Arial', sans-serif; 
   font-size: 4rem;
   font-weight: 700;
   line-height: 1.5;
@@ -28,7 +28,7 @@
 /* Animated Word Styling */
 .animation-word {
   display: inline-block;
-  color: #007bff; /* Highlight color for animated word */
+  color: #007bff; 
   font-weight: 900;
   animation: fade-in-out 4s ease-in-out infinite;
 }
@@ -56,101 +56,101 @@
 
 /* Button Styling */
 .primary-btn {
-  background-color: #000; /* Black background */
-  color: #fff; /* White text */
-  border: 1px solid #fff; /* White border */
-  padding: 10px 20px; /* Padding for spacing */
-  font-size: 1rem; /* Font size */
-  font-weight: 600; /* Bold text */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: all 0.3s ease; /* Smooth transition */
+  background-color: #000; 
+  color: #fff; 
+  border: 1px solid #fff; 
+  padding: 10px 20px;
+  font-size: 1rem; 
+  font-weight: 600;
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: all 0.3s ease;
 }
 
 /* Hover Effect */
 .primary-btn:hover {
-  background-color: #fff; /* White background on hover */
-  color: #000; /* Black text on hover */
+  background-color: #fff; 
+  color: #000; 
 }
 
 
 .secondary-btn {
-  background-color: #000; /* Black background */
-  color: #fff; /* White text */
-  border: 1px solid #fff; /* White border */
-  padding: 10px 20px; /* Padding for spacing */
-  font-size: 1rem; /* Font size */
-  font-weight: 600; /* Bold text */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: all 0.3s ease; /* Smooth transition */
+  background-color: #000; 
+  color: #fff; 
+  border: 1px solid #fff; 
+  padding: 10px 20px; 
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer; 
+  transition: all 0.3s ease; 
 }
 
 .secondary-btn:hover {
-  background-color: #fff; /* White background on hover */
-  color: #000; /* Black text on hover */
+  background-color: #fff; 
+  color: #000; 
 }
 @keyframes fadeInSlideUp {
   from {
     opacity: 0;
-    transform: translateY(20px); /* Start slightly below */
+    transform: translateY(20px); 
   }
   to {
     opacity: 1;
-    transform: translateY(0); /* End in place */
+    transform: translateY(0); 
   }
 }
 
 /* Initial State Before Animation */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(20px); /* Position slightly below */
+  transform: translateY(20px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 /* Triggered Animation Class */
 .animate {
-  animation: fadeInSlideUp 0.8s ease-out forwards; /* Fade and slide-up */
+  animation: fadeInSlideUp 0.8s ease-out forwards; 
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .animation-container {
-    height: auto; /* Allow dynamic height */
-    padding: 10px; /* Compact padding */
+    height: auto; 
+    padding: 10px;
   }
 
   .animation-heading {
-    font-size: 2rem; /* Smaller font size */
-    margin-bottom: 20px; /* Adjusted margin */
+    font-size: 2rem; 
+    margin-bottom: 20px;
   }
 
   .animation-logo img {
-    width: 70%; /* Adjust logo size */
+    width: 70%; 
     max-width: 120px;
   }
 
   .animation-buttons {
-    gap: 8px; /* Smaller gaps */
+    gap: 8px; 
   }
 
   .primary-btn,
   .secondary-btn {
-    padding: 6px 12px; /* Compact padding */
-    font-size: 1rem; /* Smaller font size */
-    min-width: 80px; /* Ensure smaller buttons fit */
+    padding: 6px 12px; 
+    font-size: 1rem;
+    min-width: 80px; 
   }
 }
 
 @media (max-width: 480px) {
   .animation-heading {
-    font-size: 1.8rem; /* Further scale down font */
+    font-size: 1.8rem; 
     margin-bottom: 15px;
   }
 
   .primary-btn,
   .secondary-btn {
-    padding: 5px 10px; /* Minimal padding */
-    font-size: 0.75rem; /* Compact font size */
+    padding: 5px 10px; 
+    font-size: 0.75rem; 
   }
 }

@@ -35,7 +35,6 @@
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* OVERVIEW */
 .project-overview-section {
   background-color: #000;
   padding: 2rem;
@@ -43,10 +42,10 @@
 }
 
 .project-overview-image {
-  width: 100%; /* Allow the image to scale responsively */
-  max-width: 1400px; /* Set the larger maximum width */
-  max-height: 800px; /* Set the larger maximum height */
-  height: auto; /* Preserve aspect ratio */
+  width: 100%; 
+  max-width: 1400px; 
+  max-height: 800px; 
+  height: auto; 
   margin-bottom: 1rem;
 }
 
@@ -60,7 +59,6 @@
   line-height: 1.5;
 }
 
-/* SERVICES & TOOLS */
 .project-services-tools {
   display: flex;
   justify-content: space-between;
@@ -99,31 +97,30 @@
 
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
-  gap: 4rem; /* Space between grid items */
-  justify-items: center; /* Center items within the grid */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+  gap: 4rem; 
+  justify-items: center; 
 }
 
 .tool-item {
-  width: 150px; /* Set a fixed width */
-  height: 150px; /* Set a fixed height */
-  background: #1f1f1f; /* Background color */
-  display: flex; /* Use flexbox for centering content */
-  flex-direction: column; /* Stack icon and text vertically */
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 150px;
+  height: 150px; 
+  background: #1f1f1f; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   text-align: center;
 }
 
 .tool-item p {
-  font-size: 1.7rem; /* Adjust font size */
-  margin: 0.5rem 0 0; /* Add spacing above the text */
+  font-size: 1.7rem; 
+  margin: 0.5rem 0 0;
   color: #ffffff;
 }
 
-/* PRODUCT STRATEGY */
 .product-strategy-section {
   display: flex;
   justify-content: center;
@@ -156,7 +153,6 @@
   text-align: justify;
 }
 
-/* PRODUCT DESIGN */
 .product-design-section {
   display: flex;
   justify-content: center;
@@ -189,7 +185,6 @@
   text-align: justify;
 }
 
-/* TESTIMONIAL */
 .testimonial-section {
   max-width: 1100px;
   margin: 4rem auto;
@@ -230,7 +225,7 @@
   color: #c3c3c3;
 }
 
-/* MOBILE STYLES */
+
 @media (max-width: 768px) {
   .project-overview-image {
     max-width: 100%; /* Allow the image to take the full width */
@@ -250,13 +245,13 @@
     padding: 1rem;
   }
   .project-services-section, .tools-section {
-    min-width: 100%; /* Make sections full width */
-    max-width: 100%; /* Remove width restrictions */
-    margin-bottom: 2rem; /* Add spacing between stacked sections */
+    min-width: 100%;
+    max-width: 100%; 
+    margin-bottom: 2rem; 
   }
   .tools-grid {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid for smaller screens */
-    gap: 1rem; /* Reduce gap */
+    gap: 1rem; 
   }
 
   .product-strategy-container,

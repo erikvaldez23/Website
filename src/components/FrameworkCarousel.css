@@ -1,4 +1,3 @@
-/* Root Variables */
 :root {
   --font-primary: "Poppins", sans-serif;
   --font-secondary: "Montserrat", sans-serif;
@@ -9,17 +8,16 @@
   --text-light: #cccccc;
   --card-shadow: rgba(0, 0, 0, 0.2);
 }
-/* Main Carousel Container */
+
 .framework-carousel {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
+    background-color: #000;
+    color: #fff; 
     text-align: center;
     padding: 40px 20px;
-    overflow: hidden; /* Prevent scrolling overflow */
-    margin: 0 auto; /* Center the content horizontally */
+    overflow: hidden; 
+    margin: 0 auto; 
   }
   
-  /* Title and Subtitle */
   .carousel-title {
     font-family: var(--font-primary);
     font-size: 3rem;
@@ -31,102 +29,93 @@
   }
   
   .carousel-subtitle {
-    font-size: 1.4rem; /* Larger subtitle */
+    font-size: 1.4rem;
     margin-bottom: 40px;
-    color: #bbb; /* Subtle gray for subtitle */
+    color: #bbb; 
   }
   
-  /* Marquee Wrapper */
   .marquee-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Spacing between rows */
-    overflow: hidden; /* Keep scrolling within the container */
+    gap: 30px; 
+    overflow: hidden; 
   }
-  
-  /* Framework Card */
+
   .framework-card {
-    display: inline-block; /* Inline-block for smooth horizontal flow */
-    margin: 0 20px; /* Increased spacing between cards */
-    background-color: #000000; /* Dark card background */
+    display: inline-block; 
+    margin: 0 20px; 
+    background-color: #000000; 
     border: 4px solid #fff;
-    border-radius: 12px; /* Slightly more rounded corners */
-    padding: 30px; /* Increased internal padding */
-    text-align: center; /* Center-align content */
-    cursor: pointer; /* Pointer on hover */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effects */
-    width: 200px; /* Larger width for cards */
-    height: auto; /* Adjust height automatically */
+    border-radius: 12px; 
+    padding: 30px; 
+    text-align: center; 
+    cursor: pointer; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    width: 200px; 
+    height: auto; 
   }
   
-  /* Hover Effect for Cards */
   .framework-card:hover {
-    transform: scale(0.9); /* More noticeable zoom on hover */
-    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.3); /* Enhanced glow effect */
+    transform: scale(0.9); 
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.3); 
   }
   
-  /* Framework Icon */
   .framework-icon {
-    font-size: 4rem; /* Larger icons */
-    margin-bottom: 15px; /* Increased spacing below the icon */
-    color: #fff; /* Default icon color */
+    font-size: 4rem; 
+    margin-bottom: 15px; 
+    color: #fff; 
   }
   
-  /* Framework Name */
   .framework-name {
-    font-size: 1.2rem; /* Larger text for names */
+    font-size: 1.2rem; 
     font-weight: 600;
-    color: #ddd; /* Slightly lighter text color */
+    color: #ddd; 
   }
   
-  /* Responsive Design */
-  
-  /* For Medium Screens (Tablets) */
   @media (max-width: 1024px) {
     .framework-carousel {
-      padding: 20px; /* Less padding on smaller screens */
+      padding: 20px; 
     }
   
     .framework-card {
-      width: 170px; /* Slightly smaller cards */
-      padding: 25px; /* Adjust padding */
-      margin: 0 15px; /* Adjust spacing */
+      width: 170px;
+      padding: 25px;
+      margin: 0 15px;  
     }
   
     .framework-icon {
-      font-size: 3.5rem; /* Slightly smaller icons */
+      font-size: 3.5rem; 
     }
   
     .framework-name {
-      font-size: 1rem; /* Adjust text size */
+      font-size: 1rem;
     }
   }
   
-/* Responsive Design */
 @media (max-width: 768px) {
   .framework-carousel {
-    padding: 1px; /* Reduced padding */
+    padding: 1px; 
   }
   
   .carousel-title {
-    font-size: 1.8rem; /* Scaled-down title */
+    font-size: 1.8rem; 
   }
 
   .carousel-subtitle {
-    font-size: 1.3rem; /* Scaled-down subtitle */
+    font-size: 1.3rem; 
   }
 
   .framework-card {
-    width: 120px; /* Smaller cards for mobile */
-    padding: 12px; /* Compact padding */
+    width: 120px; 
+    padding: 12px;
   }
 
   .framework-icon {
-    font-size: 2.5rem; /* Adjusted icon size */
+    font-size: 2.5rem; 
   }
 
   .framework-name {
-    font-size: 0.8rem; /* Compact text size */
+    font-size: 0.8rem; 
   }
 }
   

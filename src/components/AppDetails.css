@@ -1,8 +1,8 @@
 .app-details-page {
   display: flex;
-  flex-direction: column; /* Stacks content vertically */
-  justify-content: space-between; /* Pushes the footer to the bottom */
-  min-height: 100vh; /* Ensures the page takes up at least the full viewport height */
+  flex-direction: column; 
+  justify-content: space-between; 
+  min-height: 100vh; 
   background-color: black;
   color: white;
   text-align: center;
@@ -12,11 +12,11 @@
 .app-details-image {
   max-width: 300px;
   height: auto;
-  margin: 1rem auto; /* Centers the image horizontally */
+  margin: 1rem auto; 
 }
 
 .app-details-content {
-  flex: 1; /* Allows the content to grow and fill available space */
+  flex: 1;
 }
 
 .back-button {
@@ -27,7 +27,7 @@
 }
 
 .footer {
-  margin-top: auto; /* Ensures the footer stays at the bottom of the viewport */
+  margin-top: auto; 
   background-color: #000;
   color: white;
   text-align: center;
