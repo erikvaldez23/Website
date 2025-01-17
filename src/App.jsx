@@ -17,7 +17,7 @@ import FrameworkCarousel from './components/FrameworkCarousel';
 
 const App = () => {
   return (
-    <Router basename="/Website">
+    <Router basename="/Website/">
       {/* Ensure all routes account for /website as the base path */}
       <ScrollToTop />
       <div>
