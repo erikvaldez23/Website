@@ -1,74 +1,138 @@
+/* Base Styles */
 html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-    overflow-x: hidden;
-  }
-  
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+.policy-section {
+  background-color: #000;
+  color: var(--secondary-color);
+  font-family: var(--font-primary);
+  padding: 2rem 5%;
+  line-height: 1.8;
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+.policy-container {
+  background-color: #000;
+  padding: 2rem 5%;
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.policy-hero-section {
+  position: relative;
+  height: 30vh;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), 
+    url('../assets/dark-background.png') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center text for better readability on smaller screens */
+}
+
+.policy-hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
+  z-index: 1;
+}
+
+.policy-hero-title {
+  font-size: clamp(2rem, 5vw, 4rem); /* Dynamically adjust for smaller screens */
+  color: var(--secondary-color);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.policy-subtitle {
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+/* Section Content */
+.policy-section p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-family: var(--font-secondary);
+  line-height: 1.6; /* Improve readability on smaller screens */
+}
+
+.policy-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.policy-link:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
   .policy-section {
-    background-color: #000;
-    color: var(--secondary-color);
-    font-family: var(--font-primary);
-    padding: 2rem 5%;
-    line-height: 1.8;
-    max-width: 1550px;
-    margin: 0 auto; 
+    padding: 1.5rem 4%;
   }
-  
+
   .policy-container {
-    background-color: #000;
-    padding: 2rem 5%;
-    max-width: 1550px;
-    margin: 0 auto; 
+    padding: 1.5rem 4%;
   }
-  
+
   .policy-hero-section {
-    position: relative;
-    height: 30vh;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), 
-      url('../assets/dark-background.png') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 25vh; /* Reduce height for smaller screens */
+    background-size: cover; /* Ensure proper scaling */
   }
-  
-  .policy-hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
-    z-index: 1;
-  }
-  
+
   .policy-hero-title {
-    font-size: 4rem;
-    color: var(--secondary-color);
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    font-size: 2.5rem; /* Smaller font for titles */
   }
-  
+
   .policy-subtitle {
-    font-size: 3.5rem;
-    font-family: var(--font-secondary);
-    font-weight: bold;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
+    font-size: 2rem;
   }
-  
+
   .policy-section p {
+    font-size: 1.2rem;
+    line-height: 1.5; /* Maintain proper line spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .policy-section {
+    padding: 1rem 3%;
+  }
+
+  .policy-container {
+    padding: 1rem 3%;
+  }
+
+  .policy-hero-section {
+    height: 20vh; /* Further reduce height */
+    background-position: center; /* Ensure background aligns properly */
+  }
+
+  .policy-hero-title {
+    font-size: 2rem; /* Adjust title size for small screens */
+  }
+
+  .policy-subtitle {
     font-size: 1.5rem;
-    font-family: var(--font-secondary);
   }
-  
+
+  .policy-section p {
+    font-size: 1rem; /* Smaller paragraph size */
+  }
+
   .policy-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
+    font-size: 0.9rem; /* Adjust link size for touch devices */
   }
-  
-  .policy-link:hover {
-    text-decoration: underline;
-  }
-  
+}

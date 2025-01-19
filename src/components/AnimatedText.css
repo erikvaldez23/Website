@@ -141,8 +141,9 @@
   }
 
   .animation-logo img {
-    width: 70%; 
+    width: 90%; 
     max-width: 120px;
+    margin-bottom: 5px;
   }
 
   .animation-buttons {
