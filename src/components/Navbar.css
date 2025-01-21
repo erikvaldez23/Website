@@ -139,7 +139,7 @@
 
 .contact-button:hover {
   background: var(--secondary-color);
-  color: var(--primary-color);
+  color: #000;
 }
 
 .contact-button:link,

@@ -1,29 +1,13 @@
-/* Base Styles */
-html, body {
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  color: white;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit; /* Ensure consistent sizing */
-}
-
-/* Project Details Page */
 .project-details-page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 92vh;
-  padding: 0;
   background-color: black;
   color: white;
+  padding: 0;
 }
 
-/* Hero Section */
 .project-hero-section {
   position: relative;
   height: 30vh;
@@ -46,53 +30,60 @@ html, body {
 }
 
 .project-hero-title {
-  font-size: clamp(2.5rem, 4vw, 4rem); /* Dynamically scale */
+  font-size: 4rem;
   color: white;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Overview Section */
 .project-overview-section {
-  padding: 2rem 5%;
+  background-color: #000;
+  padding: 2rem;
   text-align: center;
 }
 
 .project-overview-image {
-  width: 100%;
-  max-width: 100%; /* Ensure full responsiveness */
-  height: auto;
+  width: 100%; 
+  max-width: 1400px; 
+  max-height: 800px; 
+  height: auto; 
   margin-bottom: 1rem;
 }
 
+
 .project-overview-description {
-  font-size: clamp(1.2rem, 2.5vw, 3rem);
-  padding: 1rem;
+  font-size: 3rem;
+  padding-top: 1rem;
   color: #fff;
   max-width: 1200px;
   margin: 0 auto;
-  line-height: 1.6;
-  text-align: left;
+  line-height: 1.5;
 }
 
-/* Services and Tools Section */
 .project-services-tools {
   display: flex;
-  flex-wrap: wrap; /* Enable wrapping for smaller screens */
   justify-content: space-between;
+  align-items: flex-start;
   gap: 2rem;
-  padding: 2rem;
-  max-width: 1400px;
+  padding: 2rem 1rem;
+  max-width: 1550px;
   margin: 0 auto;
 }
 
-.project-services-section, .tools-section {
+.project-services-section,
+.tools-section {
   flex: 1;
-  min-width: 300px; /* Allow smaller widths for responsiveness */
-  max-width: 100%; /* Ensure it doesn't overflow */
+  min-width: 500px;
+  max-width: 750px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
 }
 
-.project-services-section h3, .tools-section h3 {
-  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+.project-services-section h3,
+.tools-section h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
   color: #fff;
 }
 
@@ -100,128 +91,223 @@ html, body {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 2;
 }
 
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+  gap: 4rem; 
+  justify-items: center; 
 }
 
 .tool-item {
-  width: 100%;
-  max-width: 150px;
-  height: 150px;
-  background: #1f1f1f;
+  width: 150px;
+  height: 150px; 
+  background: #1f1f1f; 
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   text-align: center;
 }
 
 .tool-item p {
-  font-size: 1rem;
+  font-size: 1.7rem; 
   margin: 0.5rem 0 0;
   color: #ffffff;
 }
 
-/* Product Strategy and Design Sections */
-.product-strategy-section, .product-design-section {
+.product-strategy-section {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  padding: 2rem 1rem;
-  gap: 1.5rem;
+  align-items: center;
+  padding: 4rem 2rem;
   background-color: #000;
 }
 
-.product-strategy-container, .product-design-container {
+.product-strategy-container,
+.product-design-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  width: 100%; /* Full width on mobile */
-  max-width: 100%; /* Prevent overflow */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-.product-strategy-title, .product-design-title {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  text-align: center;
+
+.product-strategy-title {
+  flex: 1;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: #fff;
+  margin: 0;
 }
 
-.product-strategy-description, .product-design-description {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  line-height: 1.5;
+.product-strategy-description {
+  flex: 2;
+  font-size: 1.5rem;
+  line-height: 1.6;
   color: #fff;
-  padding: 1rem;
   text-align: justify;
-  overflow-wrap: break-word;
 }
 
-/* Testimonial Section */
+.product-design-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #000;
+}
+
+
+.product-design-title {
+  flex: 1;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.product-design-description {
+  flex: 2;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #fff;
+  text-align: justify;
+}
+
 .testimonial-section {
-  max-width: 100%;
+  max-width: 1100px;
   margin: 4rem auto;
-  padding: 2rem 1rem;
-  text-align: center;
+  padding: 2rem;
+  text-align: left;
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 
 .testimonial-quote {
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-  line-height: 1.8;
+  font-size: 2.5rem;
   font-weight: 700;
+  line-height: 1.8;
+  color: #fff;
 }
 
 .testimonial-author {
-  font-size: 1.2rem;
+  font-size: 1.5rem !important;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-weight: 700;
+  font-size: 1.5rem;
   color: #fff;
 }
 
 .author-title {
-  font-size: 1rem;
   font-style: italic;
+  font-size: 1.5rem;
   color: #c3c3c3;
 }
 
-/* Media Queries */
+
 @media (max-width: 768px) {
+  .project-overview-image {
+    max-width: 100%; /* Allow the image to take the full width */
+    margin-bottom: 1rem; /* Add spacing below the image */
+  }
+  .project-overview-section {
+    padding: 1rem;
+  }
+
+  .project-overview-description {
+    font-size: 1.5rem;
+  }
+
   .project-services-tools {
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
+  }
+  .project-services-section, .tools-section {
+    min-width: 100%;
+    max-width: 100%; 
+    margin-bottom: 2rem; 
+  }
+  .tools-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid for smaller screens */
+    gap: 1rem; 
   }
 
-  .product-strategy-container, .product-design-container {
+  .product-strategy-container,
+  .product-design-container {
     flex-direction: column;
     gap: 1rem;
+    text-align: center;
   }
 
-  .tools-grid {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+  .product-strategy-description,
+  .product-design-description {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .testimonial-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .testimonial-quote {
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .project-overview-description {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    padding: 0.5rem; /* Add padding for better readability */
   }
 
   .tools-grid {
-    grid-template-columns: repeat(2, 1fr); /* Maintain two columns */
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns in the grid */
+    grid-template-rows: auto auto; /* Automatically adjust row heights */
+    gap: 1rem; /* Maintain spacing between items */
+    justify-items: center; /* Center the items within their grid cells */
   }
 
-  .product-strategy-description, .product-design-description {
-    font-size: 0.9rem;
+  .tool-item {
+    width: 120px; /* Slightly smaller size for better fit */
+    height: 120px;
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .product-strategy-description,
+  .product-design-description {
+    font-size: 0.9rem; /* Reduce font size for better fit */
+    padding: 0.5rem; /* Add padding for readability */
   }
 
   .testimonial-quote {
     font-size: 1.2rem;
+    line-height: 1.4; /* Adjust line height for smaller font */
+  }
+
+  .testimonial-content {
+    text-align: center; /* Center text on smaller screens */
+    padding: 1rem; /* Add padding for spacing */
   }
 }

@@ -19,7 +19,7 @@ const services = [
   {
     id: "chat-gpt",
     title: "Chat-GPT",
-    description: "Integrating ChatGPT to deliver intelligent, conversational app experiences",
+    description: "Integrating ChatGPT to deliver intelligent, conversational app experiences.",
     icon: <SiOpenai />,
   },
   {
