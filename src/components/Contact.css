@@ -149,10 +149,7 @@ textarea {
   }
 
   .contact-section-title {
-    font-size: 2.5rem;
-    white-space: nowrap; /* Prevent the text from wrapping */
-    overflow: hidden; /* Hide overflow if the text is too long */
-    text-overflow: ellipsis; /* Add an ellipsis if the text overflows */
+    font-size: 2rem;
   }
 
   .contact-subtitle {
@@ -177,7 +174,7 @@ textarea {
   }
 
   .contact-section-title {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .contact-subtitle {
