@@ -10,7 +10,7 @@ export default defineConfig({
       }
     }
   },
-  base: '/Website/', // your base URL
+  base: '/', // your base URL
   server: {
     historyApiFallback: true,  // This will catch refresh errors and redirect to index.html
   },

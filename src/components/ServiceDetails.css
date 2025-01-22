@@ -60,35 +60,38 @@
   gap: 2rem; 
 }
 
-/* Features Section */
 .feature-container {
-  background-color: #000;
-  border: 2px solid #fff; 
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05); /* Add slight transparency */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
   padding: 1.5rem;
-  color: #fff; 
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .feature-container:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3); 
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background highlight */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
 }
 
 
 .feature-title {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #fff;
+  color: #f9f9f9; /* Lighter text for better readability */
   margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .feature-description {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.8;
-  color: #ccc;
+  color: #d3d3d3; /* Slightly softer text color */
+  font-family: 'Poppins', sans-serif;
 }
+
 
 /* Back Button */
 .service-details-back-button {

@@ -18,7 +18,7 @@ import Policy from './components/Policy';
 
 const App = () => {
   return (
-    <Router basename="/Website/">
+    <Router>
       {/* Ensure all routes account for /website as the base path */}
       <ScrollToTop />
       <div>

@@ -8,22 +8,22 @@ const servicesData = {
   "ios-development": {
     title: "iOS Development",
     description:
-      "We provide custom software solutions tailored to your needs, helping businesses achieve scalability and operational efficiency.",
+      "Transform your vision into reality with our expert iOS development services. We create custom, high-performance iOS applications tailored to meet your unique business needs.",
     features: [
       {
-        title: "Custom web applications",
+        title: "Custom-built iOS applications",
         description: "Description of feature 1 explaining its benefits and use cases.",
       },
       {
-        title: "Mobile app development",
+        title: "Native Swift and Objective-C solutions for robust performance",
         description: "Description of feature 2 detailing how it solves key challenges.",
       },
       {
-        title: "System integration",
+        title: "Seamless integration with APIs and third-party services",
         description: "Description of feature 2 detailing how it solves key challenges.",
       },
       {
-        title: "Enhanced scalability",
+        title: "Comprehensive App Store deployment and ongoing support",
         description: "Description of feature 2 detailing how it solves key challenges.",
       },
     ],
