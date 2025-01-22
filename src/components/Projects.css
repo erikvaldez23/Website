@@ -9,19 +9,14 @@
   --card-shadow: rgba(0, 0, 0, 0.2);
 }
 
-.projects-section {
-  padding: 4rem 5%;
-  background-color: #000;
-  text-align: center;
-}
-
-.projects-section > .projects-container {
+.container {
   max-width: 1550px;
-  width: 100%;
   margin: 0 auto;
+  padding: 0 1.5rem; /* Keep some padding for all screen sizes */
 }
 
 .projects-section-title {
+  text-align: center;
   font-family: var(--font-primary);
   font-size: 3rem;
   font-weight: bold;
@@ -30,126 +25,219 @@
   position: relative;
   animation: fadeInSlideUp 1s ease-out;
 }
-.projects-section-subtitle {
-  font-size: 1.4rem; 
-  font-family: var(--font-secondary);
-  color: #cccccc; 
-  margin: 1rem 0 2rem; 
-  text-align: center; 
-}
 
+.projects-section-subtitle {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  text-align: center;
+}
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* Default: 2 columns for desktop */
   gap: 2rem;
   width: 100%;
 }
 
 .project-card {
   position: relative;
-  background: #222;
   border-radius: 8px;
   overflow: hidden;
-  width: 100%;
-  height: 400px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: #000;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.project-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
 }
 
 .project-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 400px; /* Fixed height for consistency */
+  object-fit: cover; /* Fill the container while maintaining aspect ratio */
+  object-position: center; /* Center the image */
+  display: block; /* Remove inline behavior */
+}
+
+
+
+.project-hover-overlay {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-hover-overlay {
+  opacity: 1;
+}
+
+.learn-more-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover .learn-more-text {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .project-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   padding: 1.5rem;
-  color: #fff;
   text-align: left;
+  border-radius: 0 0 8px 8px;
+  background-color: #000;
 }
 
 .project-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: #fff;
   font-family: var(--font-primary);
 }
 
 .project-description {
   font-size: 1rem;
-  color: #ddd;
+  color: #ccc;
   line-height: 1.6;
-  font-family: var(--font-secondary);
+  margin-bottom: 1rem;
+  font-family: var(--font-primary);
 }
 
-.projects-learn-button {
-  background-color: rgba(255, 255, 255, 0.1);
+.project-tags {
   color: #fff;
-  padding: 0.8rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-tags span {
   font-size: 1rem;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
-  text-decoration: none;
+  font-family: var(--font-primary);
 }
 
-.projects-learn-button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  transform: scale(1.05);
-  text-decoration: none;
-}
+@media (max-width: 1024px) {
+  /* Adjust for tablets and smaller screens */
+  .container {
+    max-width: 100%; /* Utilize full screen width */
+    padding: 0 1rem; /* Reduce padding for smaller screens */
+  }
 
-.projects-learn-button:focus {
-  outline: none;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-}
+  .projects-section-title {
+    font-size: 2.5rem; /* Reduce font size */
+  }
 
-@media (max-width: 768px) {
+  .projects-section-subtitle {
+    font-size: 1.3rem;
+  }
+
   .projects-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Maintain two columns for tablets */
+    gap: 1.5rem; /* Reduce spacing */
   }
 
   .project-card {
-    height: 300px;
+    border-radius: 6px; /* Slightly smaller radius */
   }
+
+  .project-content {
+    padding: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.4rem; /* Slightly smaller font */
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .learn-more-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Optimize for mobile screens */
+  .projects-grid {
+    grid-template-columns: 1fr; /* Switch to single column */
+    gap: 1rem; /* Smaller spacing */
+  }
+
   .projects-section-title {
-    font-size: 2rem;
+    font-size: 2rem; /* Reduce title size for mobile */
   }
-}
 
-@keyframes fadeInSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  .projects-section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem; /* Reduce spacing */
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .project-card {
+    height: auto; /* Allow dynamic height */
+    border-radius: 5px;
   }
-}
 
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
+  .project-image {
+    height: 180px; /* Restrict image height for smaller screens */
+  }
 
-.animate {
-  animation: fadeInSlideUp 0.8s ease-out forwards;
+  .project-content {
+    padding: 0.8rem;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .project-description {
+    font-size: 0.8rem;
+  }
+
+  .learn-more-text {
+    font-size: 1.2rem;
+  }
+
+  .project-tags span {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem; /* Smaller tags */
+  }
+
+  @media (max-width: 768px) {
+    .project-hover-overlay {
+      opacity: 1; /* Always show the overlay */
+      transition: none; /* Remove transition for consistent display */
+    }
+  
+    .learn-more-text {
+      opacity: 1; /* Always display the text */
+      transform: none; /* Remove scaling effect */
+    }
+  }
+  
 }

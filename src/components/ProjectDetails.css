@@ -130,67 +130,35 @@
   color: #ffffff;
 }
 
-.product-strategy-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem 2rem;
-  background-color: #000;
-}
-
-.product-strategy-container,
-.product-design-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  padding: 2rem 1rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-
-.product-strategy-title {
-  flex: 1;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 0;
-}
-
-.product-strategy-description {
-  flex: 2;
-  font-size: 1.5rem;
-  line-height: 1.6;
-  color: #fff;
-  text-align: justify;
-}
-
+.product-strategy-section,
 .product-design-section {
   display: flex;
+  flex-direction: column; /* Stack header and description vertically */
   justify-content: center;
-  align-items: center;
+  align-items: center; /* Center align the content */
+  text-align: center; /* Center text alignment */
   padding: 4rem 2rem;
   background-color: #000;
 }
 
-
+.product-strategy-title,
 .product-design-title {
-  flex: 1;
   font-size: 2.5rem;
   font-weight: 700;
   color: #fff;
-  margin: 0;
+  margin-bottom: 1rem; /* Add spacing between title and description */
+  text-align: center; /* Center align the title */
 }
 
+.product-strategy-description,
 .product-design-description {
-  flex: 2;
   font-size: 1.5rem;
   line-height: 1.6;
   color: #fff;
-  text-align: justify;
+  text-align: center; /* Center align the description */
+  max-width: 1400px; /* Optional: Limit width for better readability */
 }
+
 
 .testimonial-section {
   max-width: 1100px;

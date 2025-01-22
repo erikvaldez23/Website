@@ -274,7 +274,7 @@ const ProjectDetails = () => {
       )} */}
 
       {/* Testimonial Section */}
-      {project.testimonial && (
+      {/* {project.testimonial && (
         <div className="testimonial-section">
           <div className="testimonial-content">
             <p className="testimonial-quote">"{project.testimonial.quote}"</p>
@@ -284,7 +284,7 @@ const ProjectDetails = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
       <AnimatedText />
       <Contact />
     </div>
