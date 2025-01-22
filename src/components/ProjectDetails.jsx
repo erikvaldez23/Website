@@ -233,7 +233,7 @@ const ProjectDetails = () => {
         </div>
       )}
 
-      {/* Product Strategy Section */}
+      {/* Product Strategy Section
       {project.strategy && (
         <div className="product-strategy-section">
           <div className="product-strategy-container">
@@ -241,7 +241,7 @@ const ProjectDetails = () => {
             <p className="product-strategy-description">{project.strategy}</p>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* {project.image2 && (
         <div className='project-overview-section'>
@@ -263,7 +263,7 @@ const ProjectDetails = () => {
         </div>
       )}
 
-      {project.image2 && (
+       {/* {project.image2 && (
         <div className="project-overview-section">
           <img
             src={project.image2}
@@ -271,7 +271,7 @@ const ProjectDetails = () => {
             className="project-other-images"
           />
         </div>
-      )}
+      )} */}
 
       {/* Testimonial Section */}
       {project.testimonial && (

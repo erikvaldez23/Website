@@ -5,13 +5,14 @@ import image1 from '../assets/red-cross.avif';
 import image2 from '../assets/cross-2.avif';
 import image3 from '../assets/mobile-cross.jpg';
 import image4 from '../assets/cross-4.avif';
+import wj from '../assets/mockup-1.png';
 
 const projectData = [
   {
     id: 1,
     title: 'With Jesus',
     description: 'A native mobile app that showcases a walk-along journey through Jesus’s life before crucifixion.',
-    image: image1,
+    image: wj,
     url: '/projects/1',
   },
   {
