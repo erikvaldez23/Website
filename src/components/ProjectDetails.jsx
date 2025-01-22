@@ -12,8 +12,6 @@ import {
 } from "react-icons/si";
 import { SiFirebase, SiSwift, SiKotlin, SiAndroid } from "react-icons/si";
 import "./ProjectDetails.css";
-import laptop from "../assets/laptop.png";
-import laptop2 from "../assets/laptop-2.jpeg";
 import image1 from "../assets/mockup-1.png";
 import before_after from "../assets/before-after.png";
 
@@ -60,8 +58,8 @@ const projectData = [
     id: 2,
     title: "Project 2",
     description: "This is a placeholder project description for Project 2.",
-    image: laptop,
-    image2: laptop2,
+    image: image1,
+    image2: image1,
     strategy: "Example product strategy for Project 2.",
     design: "Example product design details for Project 2.",
     testimonial: {
@@ -85,8 +83,8 @@ const projectData = [
     id: 3,
     title: "Project 3",
     description: "This is a placeholder project description for Project 3.",
-    image: laptop,
-    image2: laptop2,
+    image: image1,
+    image2: image1,
     strategy: "Example product strategy for Project 3.",
     design: "Example product design details for Project 3.",
     testimonial: {
@@ -110,8 +108,8 @@ const projectData = [
     id: 4,
     title: "Project 4",
     description: "This is a placeholder project description for Project 4.",
-    image: laptop,
-    image2: laptop2,
+    image: image1,
+    image2: image1,
     strategy: "Example product strategy for Project 4.",
     design: "Example product design details for Project 4.",
     testimonial: {

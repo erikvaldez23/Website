@@ -42,6 +42,12 @@
   width: 100%;
 }
 
+.projects-grid.single {
+  display: flex; /* Switch to flexbox for single project */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically (if necessary) */
+}
+
 .project-card {
   position: relative;
   border-radius: 8px;
