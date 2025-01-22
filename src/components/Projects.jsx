@@ -9,8 +9,8 @@ import image4 from '../assets/cross-4.avif';
 const projectData = [
   {
     id: 1,
-    title: 'Project 1',
-    description: 'A short and concise description of the project',
+    title: 'With Jesus',
+    description: 'A native mobile app that showcases a walk-along journey through Jesus’s life before crucifixion.',
     image: image1,
     url: '/projects/1',
   },
