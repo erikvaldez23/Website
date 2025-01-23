@@ -31,67 +31,61 @@
 
 /* Content Section */
 .service-details-content {
-  padding: 4rem 5%;
+  padding: 2rem 5%; /* Reduce padding for mobile */
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .service-description p {
-  font-size: 1.7rem;
-  line-height: 1.8;
+  font-size: 1.4rem; /* Slightly smaller font size */
+  line-height: 1.6;
   color: #fff;
 }
 
 .section-divider {
-  margin: 2rem 0;
+  margin: 1.5rem 0; /* Reduce vertical spacing */
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Features Section - 2x2 Grid */
+/* Features Section - Grid */
 .service-features {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr); /* Default 2 columns */
+  gap: 1.5rem;
 }
 
 .feature-container {
   background-color: rgba(255, 255, 255, 0.05);
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1rem; /* Reduce padding for mobile */
   color: #fff;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.feature-container:hover {
-  transform: translateY(-5px);
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
-}
-
 .feature-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* Adjusted for readability on mobile */
   font-weight: bold;
   color: #f9f9f9;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .feature-description {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.6;
   color: #d3d3d3;
 }
 
 /* Back Button */
 .service-details-back-button {
-  margin-top: 2rem;
-  padding: 0.8rem 1.5rem;
+  margin-top: 1.5rem; /* Reduce spacing */
+  padding: 0.6rem 1.2rem; /* Smaller button for mobile */
   background-color: transparent;
   border: 2px solid #fff;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 4px;
@@ -104,13 +98,16 @@
   color: #000;
 }
 
+/* Responsive Design */
+
+/* Medium Screens (Tablets) */
 @media (max-width: 768px) {
   .service-hero-section {
-    height: 20vh;
+    height: 20vh; /* Smaller height for hero section */
   }
 
   .service-hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Adjust font size for hero title */
   }
 
   .service-details-content {
@@ -118,14 +115,41 @@
   }
 
   .service-features {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single-column layout for smaller screens */
   }
 
   .feature-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Further reduce font size */
   }
 
   .feature-description {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Screens (Phones) */
+@media (max-width: 480px) {
+  .service-hero-section {
+    height: 18vh; /* Even smaller height for very small screens */
+  }
+
+  .service-hero-title {
+    font-size: 2rem; /* Adjust font size for readability */
+  }
+
+  .service-details-content {
+    padding: 1.5rem; /* Reduce padding */
+  }
+
+  .feature-container {
+    padding: 0.8rem; /* Reduce padding inside feature cards */
+  }
+
+  .feature-title {
+    font-size: 1.2rem;
+  }
+
+  .feature-description {
+    font-size: 0.85rem;
   }
 }
