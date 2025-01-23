@@ -34,17 +34,12 @@
   padding: 4rem 5%;
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem; 
 }
 
-/* Service Description */
 .service-description p {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   line-height: 1.8;
-  color: #ccc;
-  text-align: justify;
+  color: #fff;
 }
 
 .section-divider {
@@ -53,15 +48,15 @@
   border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Features Section */
+/* Features Section - 2x2 Grid */
 .service-features {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem; 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
 .feature-container {
-  background-color: rgba(255, 255, 255, 0.05); /* Add slight transparency */
+  background-color: rgba(255, 255, 255, 0.05);
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px;
   padding: 1.5rem;
@@ -72,26 +67,22 @@
 
 .feature-container:hover {
   transform: translateY(-5px);
-  background-color: rgba(255, 255, 255, 0.1); /* Subtle background highlight */
+  background-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
 }
-
 
 .feature-title {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #f9f9f9; /* Lighter text for better readability */
+  color: #f9f9f9;
   margin-bottom: 1rem;
-  font-family: 'Poppins', sans-serif;
 }
 
 .feature-description {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #d3d3d3; /* Slightly softer text color */
-  font-family: 'Poppins', sans-serif;
+  color: #d3d3d3;
 }
-
 
 /* Back Button */
 .service-details-back-button {
@@ -126,12 +117,8 @@
     padding: 2rem;
   }
 
-  .service-description p {
-    font-size: 1rem;
-  }
-
-  .section-divider {
-    margin: 1rem 0;
+  .service-features {
+    grid-template-columns: 1fr;
   }
 
   .feature-title {
@@ -140,31 +127,5 @@
 
   .feature-description {
     font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .service-hero-section {
-    height: 18vh;
-  }
-
-  .service-hero-title {
-    font-size: 1.8rem;
-  }
-
-  .service-details-content {
-    padding: 1rem;
-  }
-
-  .feature-container {
-    padding: 1rem;
-  }
-
-  .feature-title {
-    font-size: 1.2rem;
-  }
-
-  .feature-description {
-    font-size: 0.9rem;
   }
 }

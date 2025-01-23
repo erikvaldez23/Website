@@ -1,99 +1,111 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import AnimatedText from './AnimatedText'
-import Contact from './Contact'
+import { motion } from "framer-motion";
+import AnimatedText from "./AnimatedText";
+import Contact from "./Contact";
 import "./ServiceDetails.css";
 
 const servicesData = {
   "ios-development": {
     title: "iOS Development",
     description:
-      "Transform your vision into reality with our expert iOS development services. We create custom, high-performance iOS applications tailored to meet your unique business needs.",
+      "Bring your vision to life with cutting-edge iOS applications tailored to your business goals, delivering exceptional performance and user experiences.",
     features: [
       {
-        title: "Custom-built iOS applications",
-        description: "Description of feature 1 explaining its benefits and use cases.",
+        title: "Custom iOS Applications",
+        description: "Tailor-made apps designed to meet unique business needs.",
       },
       {
-        title: "Native Swift and Objective-C solutions for robust performance",
-        description: "Description of feature 2 detailing how it solves key challenges.",
+        title: "Native Swift and Objective-C Solutions",
+        description: "Robust, high-performance apps leveraging native tools.",
       },
       {
-        title: "Seamless integration with APIs and third-party services",
-        description: "Description of feature 2 detailing how it solves key challenges.",
+        title: "Seamless API Integration",
+        description: "Smooth connectivity with third-party services and APIs.",
       },
       {
-        title: "Comprehensive App Store deployment and ongoing support",
-        description: "Description of feature 2 detailing how it solves key challenges.",
+        title: "Comprehensive Deployment & Support",
+        description: "End-to-end App Store management and ongoing assistance.",
       },
     ],
   },
   "android-development": {
     title: "Android Development",
     description:
-      "Our mobile app development services deliver seamless user experiences on iOS and Android, helping businesses engage their audience and achieve their goals.",
+      "Leverage expert Android development to deliver engaging mobile experiences that captivate users and drive business growth.",
     features: [
       {
-        title: "Native iOS and Android development",
-        description: "Description of feature A with specific use cases.",
+        title: "Native Android Development",
+        description:
+          "Optimized apps built using Kotlin and Java for peak performance.",
       },
       {
-        title: "Cross-platform solutions",
-        description: "Description of feature B and its relevance.",
+        title: "Cross-Platform Solutions",
+        description:
+          "Unified development for consistent experiences across platforms.",
       },
       {
-        title: "User-friendly interfaces",
-        description: "Description of feature B and its relevance.",
+        title: "User-Friendly Interfaces",
+        description: "Intuitive designs that enhance usability and engagement.",
       },
       {
-        title: "App store deployment support",
-        description: "Description of feature B and its relevance.",
+        title: "App Store Deployment Support",
+        description:
+          "Comprehensive guidance for a smooth app launch on Google Play.",
       },
     ],
   },
   "open-ai": {
-    title: "OpenAI",
+    title: "OpenAI Solutions",
     description:
-      "From responsive websites to complex web applications, we build fast, secure, and user-friendly solutions tailored to your business needs.",
+      "Delivering fast, secure, and scalable web solutions, from dynamic websites to advanced AI-powered applications tailored to your business needs.",
     features: [
       {
-        title: "Responsive design",
-        description: "Description of feature A with specific use cases.",
+        title: "Responsive Design",
+        description:
+          "Optimized layouts for seamless user experiences on all devices.",
       },
       {
-        title: "Backend and frontend development",
-        description: "Description of feature B and its relevance.",
+        title: "Backend and Frontend Development",
+        description:
+          "Integrated solutions for robust and scalable web platforms.",
       },
       {
-        title: "SEO-friendly architecture",
-        description: "Description of feature B and its relevance.",
+        title: "SEO-Friendly Architecture",
+        description:
+          "Built-in optimization to improve search engine visibility.",
       },
       {
-        title: "E-commerce integration",
-        description: "Description of feature B and its relevance.",
+        title: "E-Commerce Integration",
+        description:
+          "Streamlined solutions for secure and scalable online stores.",
       },
     ],
   },
   "chat-gpt": {
-    title: "Chat-GPT",
+    title: "Chat-GPT Integration",
     description:
-      "We help businesses leverage the power of the cloud for collaboration, scalability, and data security.",
+      "Revolutionize user experiences with intelligent, conversational AI solutions powered by ChatGPT. Enhance automation, productivity, and customer engagement with seamless integration.",
     features: [
       {
-        title: "Cloud migration and hosting",
-        description: "Description of feature A with specific use cases.",
+        title: "AI-Powered Conversational Interfaces",
+        description:
+          "Create dynamic chatbots and virtual assistants for real-time, human-like interactions.",
       },
       {
-        title: "Multi-cloud and hybrid setups",
-        description: "Description of feature B and its relevance.",
+        title: "Customizable Responses",
+        description:
+          "Tailor AI responses to align with your brand’s tone, style, and use cases.",
       },
       {
-        title: "Enhanced data security",
-        description: "Description of feature B and its relevance.",
+        title: "Integration with Existing Workflows",
+        description:
+          "Embed ChatGPT into CRMs, e-commerce platforms, or customer service systems effortlessly.",
       },
       {
-        title: "Cost-effective solutions",
-        description: "Description of feature B and its relevance.",
+        title: "Advanced Natural Language Processing",
+        description:
+          "Leverage state-of-the-art NLP to understand complex queries and provide accurate responses.",
       },
     ],
   },
@@ -127,22 +139,28 @@ const ServiceDetails = () => {
 
       {/* Content Section */}
       <div className="service-details-content">
-        {/* Service Description */}
         <div className="service-description">
           <p>{service.description}</p>
           <hr className="section-divider" />
         </div>
 
-        {/* Features Section */}
+        {/* 2x2 Grid of Features */}
         <div className="service-features">
           {service.features.map((feature, index) => (
-            <div className="feature-container" key={index}>
+            <motion.div
+              className="feature-container"
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
               <h3 className="feature-title">{feature.title}</h3>
               <p className="feature-description">{feature.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
+
       <AnimatedText />
       <Contact />
     </div>
