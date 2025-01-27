@@ -67,7 +67,7 @@
 
 /* Open State (Transforms for Close Icon) */
 .hamburger-menu.open span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px); /* Ensure equal translation */
+  transform: rotate(45deg) translate(7px, 7px); /* Ensure equal translation */
 }
 
 .hamburger-menu.open span:nth-child(2) {
