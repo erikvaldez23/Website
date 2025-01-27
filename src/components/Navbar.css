@@ -80,7 +80,7 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Ensures content starts at the top */
   align-items: center;
   z-index: 1000;
   transform: translateY(-100%);
