@@ -124,7 +124,6 @@ const Navbar = () => {
             <li>{renderNavLink("expertise", "Expertise")}</li>
             <li>{renderNavLink("services", "Services")}</li>
             <li>{renderNavLink("projects", "Portfolio")}</li>
-            <li>{renderNavLink("contact", "Contact")}</li>
           </ul>
 
           <button className="mobile-contact-button">
