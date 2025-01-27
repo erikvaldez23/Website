@@ -1,23 +1,19 @@
-/* Navbar Container */
+/* Navbar Base */
 .navbar {
-  width: 100vw;
   position: fixed;
   top: 0;
-  left: 0;
+  width: 100%;
   z-index: 1000;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
   background: transparent;
-  box-shadow: none;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
-  opacity: 0.9;
+  transition: background-color 0.3s ease;
 }
 
 .navbar.scrolled {
   background-color: #000;
-  opacity: 1;
 }
 
 /* Logo */
@@ -29,7 +25,7 @@
 }
 
 .logo:hover {
-  color: var(--text-light);
+  color: #007bff;
 }
 
 .logo a {
@@ -37,150 +33,170 @@
   color: inherit;
 }
 
-/* Navbar Links */
-.nav-links {
-  display: flex;
-  gap: 1.8rem;
-  list-style: none;
-  margin-left: -140px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: var(--secondary-color);
-  font-size: 1.8rem;
-  font-weight: bold;
-  position: relative;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-  color: var(--text-light);
-}
-
-.nav-links li a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--secondary-color);
-  transition: width 0.3s ease;
-}
-
-.nav-links li a:hover::after {
-  width: 100%;
-}
-
-/* Hamburger Menu */
+/* Hamburger Menu Container */
 .hamburger-menu {
-  display: none;
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  width: 30px; /* Adjust for desired size */
+  height: 22px; /* Adjust height to match the spacing of spans */
   cursor: pointer;
-  gap: 0.3rem;
+  z-index: 1100;
+  position: relative; /* Keep it positioned relative for transforms */
 }
 
+/* Spans in Hamburger Menu */
 .hamburger-menu span {
   display: block;
-  width: 25px;
-  height: 3px;
-  background-color: var(--secondary-color);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  width: 100%; /* Match width of the parent container */
+  height: 4px; /* Adjust thickness of the lines */
+  background-color: #f0f0f0; /* Default color */
+  border-radius: 2px; /* Rounded edges for better appearance */
+  transition: all 0.3s ease; /* Smooth transition for animations */
 }
 
+/* Open State (Transforms for Close Icon) */
 .hamburger-menu.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(6px, 6px); /* Ensure equal translation */
 }
 
 .hamburger-menu.open span:nth-child(2) {
-  opacity: 0;
+  opacity: 0; /* Hide the middle line */
 }
 
 .hamburger-menu.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(6px, -6px); /* Ensure equal translation */
 }
 
-.nav-links.mobile-menu {
+
+/* Mobile Navigation */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 70px;
-  right: 0;
-  width: 200px;
-  background: var(--bg-color-light);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px var(--card-shadow);
-  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
 }
 
-.nav-links.mobile-menu li a {
-  color: var(--text-light);
-  margin-bottom: 1rem;
+.mobile-nav.slide-in {
+  transform: translateY(0);
 }
 
-.nav-links.mobile-menu li:last-child {
-  margin-bottom: 0;
+.mobile-nav.slide-out {
+  transform: translateY(-100%);
 }
 
-/* Contact Button */
-.contact-button {
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  color: var(--secondary-color);
-  border: 3px solid var(--secondary-color);
-  background: transparent;
-  border-radius: 20px;
+/* Mobile Nav Links */
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.mobile-nav-links li {
+  margin-bottom: 1.5rem;
+}
+
+.mobile-nav-links li a {
+  font-size: 2rem;
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+.mobile-nav-links li a:hover {
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none; /* Explicitly remove underlines */
+  color: #007bff;
 }
 
-.contact-button:hover {
-  background: var(--secondary-color);
+/* Buttons */
+.mobile-contact-button {
+  margin-top: 0.5rem;
+  width: 300px;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  background-color: #f0f0f0;
+  border: none;
   color: #000;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
-.contact-button:link,
-.contact-button:visited {
-  text-decoration: none;
-  color: var(--secondary-color); /* Ensure no purple link issue */
+.mobile-contact-button:hover {
+  background-color: var(--text-light);
 }
 
-.contact-button:active {
-  color: var(--text-light);
-  background: var(--secondary-color);
+.mobile-schedule-button {
+  margin-top: 1rem;
+  width: 300px;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  background-color: #f0f0f0;
+  border: none;
+  color: #000;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
-/* Media Queries */
+.mobile-schedule-button:hover {
+  background-color: var(--text-light);
+}
+
+/* Social Media Icons */
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-media-icons a {
+  font-size: 2rem;
+  color: #f0f0f0;
+  transition: color 0.3s ease;
+}
+
+.social-media-icons a:hover {
+  color: #007bff;
+}
+
+/* Logo container in mobile menu */
+.mobile-nav-logo {
+  position: absolute; /* Ensures it stays fixed in the top-left */
+  top: 1rem; /* Adjust spacing from the top */
+  left: 1rem; /* Adjust spacing from the left */
+  z-index: 1200; /* Ensures it stays above other elements */
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.mobile-nav-logo:hover {
+  color: #007bff;
+}
+
+/* Adjust for Desktop (larger screens) */
+@media (min-width: 1024px) {
+  .mobile-nav {
+    height: 45vh; /* Limit the height to 40% of the viewport */
+    justify-content: flex-start; /* Align content at the top */
+    padding-top: 5dvh; /* Add padding for spacing */
+  }
+}
+
+/* Hide the logo on smaller screens (mobile view) */
 @media (max-width: 768px) {
-  .nav-links {
+  .mobile-nav-logo {
     display: none;
   }
-
-  .hamburger-menu {
-    display: flex;
-  }
-
-  .contact-button {
-    display: none;
-  }
-}
-
-/* Global Styles */
-body {
-  margin: 0;
-  font-family: var(--font-primary);
-  background-color: var(--bg-color-dark);
-  color: var(--text-light);
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-* {
-  box-sizing: border-box;
 }
