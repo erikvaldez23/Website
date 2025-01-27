@@ -28,7 +28,7 @@ const About = () => {
         <div className="about-heading hidden">
           <h2 className="section-title">What We Do</h2>
           <p className="about-overview">
-            We bring together strategy, design, and engineering to develop products end to end.
+          Transforming ideas into impactful solutions through strategy, design, and engineering.
           </p>
         </div>
         <div className="about-content">

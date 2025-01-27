@@ -150,21 +150,22 @@
 }
 
 .close-calendly-button {
-  position: fixed;
-  top: 0px;
-  right: 1.6rem;
+  position: absolute; /* Change from fixed to absolute */
+  top: 0.5rem; /* Adjust the distance from the top */
+  left: 1rem; /* Adjust the distance from the left */
   background: none;
   border: none;
-  font-size: 3rem;
-  color: #fff;
-  z-index: 1100;
+  font-size: 3rem; /* Adjust the size of the button */
+  color: #000;
+  z-index: 1100; /* Ensure it stays above other elements in the modal */
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .close-calendly-button:hover {
-  color: #aaa;
+  color: #aaa; /* Slightly change the color on hover */
 }
+
 
 @media (max-width: 1024px) {
   .hero-title {
@@ -212,9 +213,9 @@
     height: 80%;
   }
   .close-calendly-button {
-    font-size: 3rem;
-    top: 0rem;
-    right: -1rem;
+    top: 0.5rem; /* Reduce spacing for smaller screens */
+    left: 0.5rem; /* Adjust for smaller spacing on the left */
+    font-size: 2rem; /* Slightly smaller font size for mobile */
   }
 }
 

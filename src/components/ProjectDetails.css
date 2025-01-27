@@ -152,7 +152,7 @@
 
 .product-strategy-description,
 .product-design-description {
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.6;
   color: #fff;
   text-align: center; /* Center align the description */
@@ -238,7 +238,7 @@
 
   .product-strategy-description,
   .product-design-description {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.4;
   }
 
@@ -274,7 +274,7 @@
 
   .product-strategy-description,
   .product-design-description {
-    font-size: 0.9rem; /* Reduce font size for better fit */
+    font-size: 1.2rem; /* Reduce font size for better fit */
     padding: 0.5rem; /* Add padding for readability */
   }
 

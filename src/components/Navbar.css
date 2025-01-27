@@ -12,6 +12,16 @@
   transition: background-color 0.3s ease;
 }
 
+/* Limit the width of the navbar */
+.navbar-container {
+  max-width: 1500px;
+  width: 100%; /* Allow full width for smaller screens */
+  margin: 0 auto; /* Center the container horizontally */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .navbar.scrolled {
   background-color: #000;
 }
@@ -86,6 +96,7 @@
   transform: translateY(-100%);
   transition: transform 0.5s ease-in-out;
 }
+
 
 .mobile-nav.slide-in {
   transform: translateY(0);
@@ -180,6 +191,7 @@
   font-weight: bold;
   color: var(--secondary-color);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .mobile-nav-logo:hover {
@@ -200,4 +212,12 @@
   .mobile-nav-logo {
     display: none;
   }
+}
+
+button a,
+button a:visited,
+button a:hover,
+button a:active {
+  text-decoration: none;
+  color: inherit;
 }

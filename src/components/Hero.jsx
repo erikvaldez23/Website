@@ -25,7 +25,6 @@ const Hero = () => {
       block: "start", // Aligns the element to the top of the viewport
     });
   };
-  
 
   return (
     <section className="hero-section">

@@ -19,9 +19,7 @@ import Policy from './components/Policy';
 const App = () => {
   return (
     <Router>
-      {/* Ensure all routes account for /website as the base path */}
       <ScrollToTop />
-      <div>
         <Navbar />
         <div className="app">
           <Routes>
@@ -40,7 +38,6 @@ const App = () => {
           </Routes>
         </div>
         <Footer />
-      </div>
     </Router>
   );
 };

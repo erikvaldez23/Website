@@ -83,6 +83,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`navbar ${isHeroOutOfView ? "scrolled" : ""}`}>
+        <div className="navbar-container">
         <div className="logo">
           {location.pathname === "/" ? (
             <span onClick={scrollToTop}>Adonai Innovations</span>
@@ -108,7 +109,7 @@ const Navbar = () => {
           }`}
         >
           {/* Logo at the top left */}
-          <div className="mobile-nav-logo">
+          {/* <div className="mobile-nav-logo">
             {location.pathname === "/" ? (
               <span onClick={scrollToTop}>Adonai Innovations</span>
             ) : (
@@ -116,7 +117,7 @@ const Navbar = () => {
                 Adonai Innovations
               </RouterLink>
             )}
-          </div>
+          </div> */}
 
           <ul className="mobile-nav-links">
             <li>{renderNavLink("about", "About")}</li>
@@ -137,7 +138,7 @@ const Navbar = () => {
           </button>
           <div className="social-media-icons">
             <a
-              href="https://www.facebook.com/..."
+              href="https://www.facebook.com/people/Adonai-Innovations/pfbid02UjwtrFFY4WpJrDJm1QDXAykk71rpWGywUCBYKAE5FqHSxQa1Zi3jNit9VXmzTjXnl/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -165,6 +166,7 @@ const Navbar = () => {
               <i className="fab fa-linkedin-in"></i>
             </a>
           </div>
+        </div>
         </div>
       </nav>
 
