@@ -6,30 +6,25 @@ import "./Navbar.css";
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isHeroOutOfView, setHeroOutOfView] = useState(false);
-  const [showCalendly, setShowCalendly] = useState(false); // State for Calendly
+  const [showCalendly, setShowCalendly] = useState(false);
   const location = useLocation();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   const handleLogoClick = () => {
     if (location.pathname === "/") {
-      scrollToTop();
-    } else {
-      setMobileMenuOpen(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
+    setMobileMenuOpen(false);
   };
 
   const renderNavLink = (sectionId, label) => {
     return location.pathname === "/" ? (
       <ScrollLink
         to={sectionId}
-        smooth={true}
+        smooth
         duration={500}
         onClick={() => setMobileMenuOpen(false)}
       >
@@ -53,79 +48,60 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const setupObserver = () => {
-      const heroSection = document.getElementById("hero");
-      if (!heroSection) {
-        setHeroOutOfView(true);
-        return;
-      }
+    const heroSection = document.getElementById("hero");
+    if (!heroSection) {
+      setHeroOutOfView(true);
+      return;
+    }
 
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setHeroOutOfView(!entry.isIntersecting);
-        },
-        {
-          root: null,
-          threshold: 0,
-        }
-      );
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHeroOutOfView(!entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
 
-      observer.observe(heroSection);
-
-      return () => {
-        observer.disconnect();
-      };
-    };
-
-    setupObserver();
+    observer.observe(heroSection);
+    return () => observer.disconnect();
   }, [location.pathname]);
 
   return (
     <>
       <nav className={`navbar ${isHeroOutOfView ? "scrolled" : ""}`}>
         <div className="navbar-container">
-        <div className="logo">
-          {location.pathname === "/" ? (
-            <span onClick={scrollToTop}>Adonai Innovations</span>
-          ) : (
-            <RouterLink to="/" onClick={handleLogoClick}>
-              Adonai Innovations
-            </RouterLink>
-          )}
-        </div>
-
-        <div
-          className={`hamburger-menu ${isMobileMenuOpen ? "open" : ""}`}
-          onClick={toggleMobileMenu}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <div
-          className={`mobile-nav ${
-            isMobileMenuOpen ? "slide-in" : "slide-out"
-          }`}
-        >
-          {/* Logo at the top left */}
-          {/* <div className="mobile-nav-logo">
+          <div className="logo">
             {location.pathname === "/" ? (
-              <span onClick={scrollToTop}>Adonai Innovations</span>
+              <span onClick={handleLogoClick}>Adonai Innovations</span>
             ) : (
               <RouterLink to="/" onClick={handleLogoClick}>
                 Adonai Innovations
               </RouterLink>
             )}
-          </div> */}
+          </div>
 
+          <div
+            className={`hamburger-menu ${isMobileMenuOpen ? "open" : ""}`}
+            onClick={toggleMobileMenu}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div
+          className={`mobile-nav ${isMobileMenuOpen ? "active" : ""}`}
+          style={{
+            maxHeight: isMobileMenuOpen ? "100vh" : "0",
+            overflow: isMobileMenuOpen ? "auto" : "hidden",
+          }}
+        >
           <ul className="mobile-nav-links">
             <li>{renderNavLink("about", "About")}</li>
             <li>{renderNavLink("expertise", "Expertise")}</li>
             <li>{renderNavLink("services", "Services")}</li>
             <li>{renderNavLink("projects", "Portfolio")}</li>
           </ul>
-
           <button className="mobile-contact-button">
             {renderNavLink("contact", "Get in Touch")}
           </button>
@@ -137,44 +113,39 @@ const Navbar = () => {
           </button>
           <div className="social-media-icons">
             <a
-              href="https://www.facebook.com/people/Adonai-Innovations/pfbid02UjwtrFFY4WpJrDJm1QDXAykk71rpWGywUCBYKAE5FqHSxQa1Zi3jNit9VXmzTjXnl/"
+              href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a
+            {/* <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="fab fa-twitter"></i>
-            </a>
+            </a> */}
             <a
-              href="https://instagram.com/adonai.innovations"
+              href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="fab fa-instagram"></i>
             </a>
-            <a
+            {/* <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="fab fa-linkedin-in"></i>
-            </a>
+            </a> */}
           </div>
-        </div>
         </div>
       </nav>
 
-      {/* Calendly Overlay */}
       {showCalendly && (
-        <div
-          className="calendly-overlay"
-          onClick={() => setShowCalendly(false)}
-        >
+        <div className="calendly-overlay" onClick={() => setShowCalendly(false)}>
           <div
             className="calendly-iframe-container"
             onClick={(e) => e.stopPropagation()}
@@ -190,10 +161,7 @@ const Navbar = () => {
               title="Schedule a Meeting"
               width="100%"
               height="100%"
-              style={{
-                border: "none",
-                borderRadius: "8px",
-              }}
+              style={{ border: "none", borderRadius: "8px" }}
             ></iframe>
           </div>
         </div>
