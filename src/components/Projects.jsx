@@ -14,9 +14,9 @@ const projectData = [
   },
   // {
   //   id: 2,
-  //   title: 'Project 2',
+  //   title: 'Adonai AI',
   //   description: 'A short and concise description of the project',
-  //   image: image1,
+  //   image: wj,
   //   url: '/projects/2',
   // },
   // {

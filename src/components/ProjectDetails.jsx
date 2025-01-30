@@ -56,12 +56,15 @@ const projectData = [
   },
   {
     id: 2,
-    title: "Project 2",
-    description: "This is a placeholder project description for Project 2.",
+    title: "Adonai AI",
+    description: [
+      "This project leverages artificial intelligence to assist pastors, ministry leaders, and Christian believers in crafting sermons, Bible studies, and personalized devotional plans. The AI model is designed to analyze Biblical texts, theological resources, and user input to generate structured and relevant content tailored to individual needs.", 
+      "The goal is to provide a modern tool that empowers users in their faith journey, enhances their understanding of Scripture, and streamlines the preparation process for church services and Bible studies.",
+    ],
     image: image1,
     image2: image1,
-    strategy: "Example product strategy for Project 2.",
-    design: "Example product design details for Project 2.",
+    strategy: "The vision behind this project is to create an innovative, AI-powered platform that enhances the process of sermon and devotional preparation. The platform targets pastors and clergy who wish to streamline their preparation workflows, small group leaders and Bible study organizers who need structured lesson plans, and Christians seeking personalized devotionals to grow spiritually. Core features include AI-driven sermon generation based on Bible passages, themes, or topics; contextual analysis with cross-references to theological resources; and a library of suggested prayer points, key takeaways, and discussion prompts. The platform is designed to save time for leaders, foster deeper spiritual growth, and make Biblical tools more accessible through modern technology.",
+    design: "The product design emphasizes simplicity and usability. The interface features a clean, intuitive design, offering users a streamlined way to input Bible passages, select sermon formats, and organize their materials. Users can access tools such as a scripture input field, a thematic generator for selecting or customizing sermon topics, and a dashboard to save and manage drafts. Collaboration features allow team members to provide feedback, while integration with commentaries and theological resources supports deeper research. The design prioritizes accessibility with adaptive layouts for desktop and mobile, a dark mode for extended use, and compatibility with screen readers to ensure inclusivity. A minimalist aesthetic featuring warm tones and Christian-inspired visuals provides a welcoming and reflective experience. Built using React.js for the frontend and Node.js for the backend, the platform integrates AI tools like OpenAI’s GPT to deliver dynamic and accurate content, supported by a robust database for storing user data and drafts.",
     testimonial: {
       quote:
         "Before hiring these developers, our website was held together with duct tape and good intentions. Now it’s so smooth, even our intern can’t break it (and trust me, they’ve tried). Highly recommend!",

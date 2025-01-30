@@ -113,7 +113,7 @@ const Navbar = () => {
           </button>
           <div className="social-media-icons">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/people/Adonai-Innovations/pfbid0R29hdwMSPpwFnJzhHM3jTc2LMPyMqfCX8GrcNoUmB5GTxcSQ2ktxd4pnLpz7vPK1l/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -127,7 +127,7 @@ const Navbar = () => {
               <i className="fab fa-twitter"></i>
             </a> */}
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/adonai.innovations/"
               target="_blank"
               rel="noopener noreferrer"
             >
