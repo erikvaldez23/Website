@@ -1,3 +1,4 @@
+/* === General Page Styling === */
 .project-details-page {
   display: flex;
   flex-direction: column;
@@ -8,6 +9,7 @@
   padding: 0;
 }
 
+/* === Hero Section === */
 .project-hero-section {
   position: relative;
   height: 30vh;
@@ -35,45 +37,49 @@
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+/* === Project Overview Section === */
 .project-overview-section {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two equal columns */
-  align-items: center; /* Vertically center content */
-  gap: 2rem; /* Space between columns */
+  align-items: center;
+  gap: 2rem;
   background-color: #000;
   padding: 4rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
+  overflow: hidden;
 }
-
-.project-overview-image {
-  width: 100%;
-  max-width: 700px; /* Control the max width */
-  height: auto;
-  margin: 0 auto; /* Center the image within its grid cell */
-  display: block;
-}
-
-.project-other-images {
-  width: 100%;
-  max-width: 1400px;
-  max-height: 800px;
-  height: auto;
-  display: block;
-  margin: 0 auto; /* Centers images horizontally */
-  text-align: center;
-}
-
 
 .project-overview-description {
   font-size: 1.8rem;
   color: #fff;
   line-height: 1.6;
-  text-align: left; /* Align text to the left */
-  padding: 0;
+  text-align: left;
+  padding: 0 1rem;
   max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
+.project-overview-image {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+.project-other-images {
+  width: 100%;
+  max-width: 1400px; /* Adjust width to prevent excessive stretching */
+  height: auto;
+  display: block;
+  margin: 2rem auto; /* Ensures it is centered */
+  text-align: center;
+}
+
+
+/* === Services & Tools Section === */
 .project-services-tools {
   display: flex;
   justify-content: space-between;
@@ -110,45 +116,48 @@
   line-height: 2;
 }
 
+/* === Tools Grid === */
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
-  gap: 4rem; 
-  justify-items: center; 
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 4rem;
+  justify-items: center;
 }
+
 .center-tools {
   display: flex;
-  justify-content: center; /* Center the tools section */
+  justify-content: center;
   align-items: center;
 }
 
 .tool-item {
   width: 150px;
-  height: 150px; 
-  background: #1f1f1f; 
+  height: 150px;
+  background: #1f1f1f;
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .tool-item p {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   margin: 0.5rem 0 0;
   color: #ffffff;
 }
 
+/* === Our Story & Product Design Sections === */
 .product-strategy-section,
 .our-story-section,
 .product-design-section {
   display: flex;
-  flex-direction: column; /* Stack header and description vertically */
+  flex-direction: column;
   justify-content: center;
-  align-items: center; /* Center align the content */
-  text-align: center; /* Center text alignment */
+  align-items: center;
+  text-align: center;
   padding: 4rem 2rem;
   background-color: #000;
 }
@@ -159,8 +168,8 @@
   font-size: 3.5rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 1rem; /* Add spacing between title and description */
-  text-align: center; /* Center align the title */
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .product-strategy-description,
@@ -169,66 +178,38 @@
   font-size: 1.6rem;
   line-height: 1.6;
   color: #fff;
-  text-align: center; /* Center align the description */
-  max-width: 1400px; /* Optional: Limit width for better readability */
+  text-align: center;
+  max-width: 1400px;
 }
 
-
-.testimonial-section {
-  max-width: 1100px;
-  margin: 4rem auto;
-  padding: 2rem;
-  text-align: left;
-}
-
-.testimonial-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.5rem;
-}
-
-.testimonial-quote {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.8;
-  color: #fff;
-}
-
-.testimonial-author {
-  font-size: 1.5rem !important;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-}
-
-.author-name {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #fff;
-}
-
-.author-title {
-  font-style: italic;
-  font-size: 1.5rem;
-  color: #c3c3c3;
-}
-
-
+/* === Responsive Design for Mobile === */
 @media (max-width: 768px) {
-  .project-overview-image {
-    max-width: 100%; /* Allow the image to take the full width */
-    margin-bottom: 1rem; /* Add spacing below the image */
-  }
   .project-overview-section {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
     padding: 1rem;
-    grid-template-columns: 1fr; /* Switch to a single column */
     text-align: center;
   }
 
   .project-overview-description {
-    text-align: center;
     font-size: 1.5rem;
+    padding: 0 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .project-overview-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 
   .project-services-tools {
@@ -236,23 +217,21 @@
     align-items: center;
     padding: 1rem;
   }
-  .project-services-section, .tools-section {
+
+  .project-services-section,
+  .tools-section {
     min-width: 100%;
-    max-width: 100%; 
-    margin-bottom: 2rem; 
-  }
-  .tools-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid for smaller screens */
-    gap: 1rem; 
-  }
-  .tool-item p {
-    font-size: 1.3rem; /* Smaller font for tablets */
+    max-width: 100%;
+    margin-bottom: 2rem;
   }
 
-  .project-other-images {
-    max-width: 100%;
-    display: block;
-    margin: 1rem auto; /* Ensures centering */
+  .tools-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+
+  .tool-item p {
+    font-size: 1.3rem;
   }
 
   .product-strategy-container,
@@ -267,56 +246,35 @@
     font-size: 1.2rem;
     line-height: 1.4;
   }
-
-  .testimonial-content {
-    text-align: center;
-    align-items: center;
-  }
-
-  .testimonial-quote {
-    font-size: 1.5rem;
-  }
 }
 
 @media (max-width: 480px) {
   .project-overview-description {
     font-size: 1.2rem;
-    padding: 0.5rem; /* Add padding for better readability */
+    padding: 0.5rem 1rem;
   }
 
   .tools-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns in the grid */
-    grid-template-rows: auto auto; /* Automatically adjust row heights */
-    gap: 1rem; /* Maintain spacing between items */
-    justify-items: center; /* Center the items within their grid cells */
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
 
   .tool-item {
-    width: 120px; /* Slightly smaller size for better fit */
+    width: 120px;
     height: 120px;
-    font-size: 1rem; /* Adjust font size for smaller screens */
+    font-size: 1rem;
   }
+
   .tool-item p {
-    font-size: 1rem; /* Even smaller font for phones */
-    max-width: 80px; /* Prevents text from stretching too much */
-    overflow-wrap: break-word; /* Ensures long words break properly */
+    font-size: 1rem;
+    max-width: 80px;
+    overflow-wrap: break-word;
   }
 
   .product-strategy-description,
   .our-story-description,
   .product-design-description {
-    font-size: 1.2rem; /* Reduce font size for better fit */
-    padding: 0.5rem; /* Add padding for readability */
-  }
-
-  .testimonial-quote {
     font-size: 1.2rem;
-    line-height: 1.4; /* Adjust line height for smaller font */
-  }
-
-  .testimonial-content {
-    text-align: center; /* Center text on smaller screens */
-    padding: 1rem; /* Add padding for spacing */
+    padding: 0.5rem;
   }
 }
