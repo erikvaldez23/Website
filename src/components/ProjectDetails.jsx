@@ -8,6 +8,8 @@ import "./ProjectDetails.css";
 import image1 from "../assets/mockup-1.png";
 import image2 from "../assets/common-life.png";
 import commonLife from "../assets/common-life.png";
+import commonLife2 from "../assets/common-life2.png";
+import commonLife3 from "../assets/common-life3.png";
 import commonLifeRBG from "../assets/common-life-removebg.png";
 import before_after from "../assets/before-after.png";
 
@@ -58,7 +60,8 @@ const projectData = [
       "Whether for pastors, small group leaders, or individuals seeking structured study tools, this platform makes advanced biblical knowledge more approachable and interactive through modern technology.",
     ],
     image: commonLifeRBG,
-    image2: commonLife,
+    image2: commonLife2,
+    image3: commonLife3,
     story: [
       "I was raised in a Christian home. My parents put me and my siblings into a private Christian school that was also our church. We had Bible class, we sang Bible songs, and growing up I spent just about every day of the week inside our church building. While I appreciate the strong foundation and lived examples of faith I received, my personal spiritual practice eventually took a backseat. That changed dramatically, however, with the arrival of my kiddo during the pandemic.",
       "Becoming a parent made me see that while faith was firm in my heart, I wasn't actively living for God. I needed to start showing my child a lived example of Christ like my parents did for me. My wife and I were blessed to quickly discover a supportive church family where we could share life's experiences and learn together. But life is busy, so I still found there were many times I was trying to go deeper into the Word on my own.",
@@ -209,11 +212,10 @@ const ProjectDetails = () => {
         <img
           src={project.image}
           alt={project.title}
-          className="project-overview-image"
+          className="project-overview-images"
         />
       </div>
 
-      {/* Dynamic Services and Tools Section */}
       {/* Dynamic Services and Tools Section */}
       <div
         className={`project-services-tools ${
@@ -284,15 +286,15 @@ const ProjectDetails = () => {
         </div>
       )} */}
 
-      {/* {project.image2 && (
-        <div className='project-overview-section'>
+      {project.id === 2 && project.image2 && (
+        <div>
           <img
-            src={project.image2}
+            src={project.image3}
             alt="Additional visual for the project"
-            className="project-overview-image"
+            className="project-other-images"
           />
         </div>
-      )} */}
+      )}
 
       {/* Product Design Section */}
       {project.design && (
