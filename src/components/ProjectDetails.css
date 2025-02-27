@@ -36,36 +36,42 @@
 }
 
 .project-overview-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  align-items: center; /* Vertically center content */
+  gap: 2rem; /* Space between columns */
   background-color: #000;
-  padding: 2rem;
-  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .project-overview-image {
-  width: 100%; 
-  max-width: 600px; 
-  max-height: 700px; 
-  height: auto; 
-  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 700px; /* Control the max width */
+  height: auto;
+  margin: 0 auto; /* Center the image within its grid cell */
+  display: block;
 }
 
 .project-other-images {
-  width: 100%; 
-  max-width: 1400px; 
-  max-height: 800px; 
-  height: auto; 
-  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 1400px;
+  max-height: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centers images horizontally */
+  text-align: center;
 }
 
 
-
 .project-overview-description {
-  font-size: 2rem;
-  padding-top: 8rem;
+  font-size: 1.8rem;
   color: #fff;
-  max-width: 1200px;
-  margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.6;
+  text-align: left; /* Align text to the left */
+  padding: 0;
+  max-width: 100%;
 }
 
 .project-services-tools {
@@ -110,6 +116,11 @@
   gap: 4rem; 
   justify-items: center; 
 }
+.center-tools {
+  display: flex;
+  justify-content: center; /* Center the tools section */
+  align-items: center;
+}
 
 .tool-item {
   width: 150px;
@@ -125,12 +136,13 @@
 }
 
 .tool-item p {
-  font-size: 1.7rem; 
+  font-size: 1.5rem; 
   margin: 0.5rem 0 0;
   color: #ffffff;
 }
 
 .product-strategy-section,
+.our-story-section,
 .product-design-section {
   display: flex;
   flex-direction: column; /* Stack header and description vertically */
@@ -142,8 +154,9 @@
 }
 
 .product-strategy-title,
+.our-story-title,
 .product-design-title {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 1rem; /* Add spacing between title and description */
@@ -151,8 +164,9 @@
 }
 
 .product-strategy-description,
+.our-story-description,
 .product-design-description {
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 1.6;
   color: #fff;
   text-align: center; /* Center align the description */
@@ -208,9 +222,12 @@
   }
   .project-overview-section {
     padding: 1rem;
+    grid-template-columns: 1fr; /* Switch to a single column */
+    text-align: center;
   }
 
   .project-overview-description {
+    text-align: center;
     font-size: 1.5rem;
   }
 
@@ -227,6 +244,15 @@
   .tools-grid {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust grid for smaller screens */
     gap: 1rem; 
+  }
+  .tool-item p {
+    font-size: 1.3rem; /* Smaller font for tablets */
+  }
+
+  .project-other-images {
+    max-width: 100%;
+    display: block;
+    margin: 1rem auto; /* Ensures centering */
   }
 
   .product-strategy-container,
@@ -271,8 +297,14 @@
     height: 120px;
     font-size: 1rem; /* Adjust font size for smaller screens */
   }
+  .tool-item p {
+    font-size: 1rem; /* Even smaller font for phones */
+    max-width: 80px; /* Prevents text from stretching too much */
+    overflow-wrap: break-word; /* Ensures long words break properly */
+  }
 
   .product-strategy-description,
+  .our-story-description,
   .product-design-description {
     font-size: 1.2rem; /* Reduce font size for better fit */
     padding: 0.5rem; /* Add padding for readability */

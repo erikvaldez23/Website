@@ -3,16 +3,12 @@ import { useParams } from "react-router-dom";
 import Contact from "./Contact";
 import AnimatedText from "./AnimatedText";
 import { FaReact } from "react-icons/fa";
-import {
-  SiShopify,
-  SiSanity,
-  SiAlgolia,
-  SiFigma,
-  SiNextdotjs,
-} from "react-icons/si";
-import { SiFirebase, SiSwift, SiKotlin, SiAndroid } from "react-icons/si";
+import {   SiShopify, SiSanity, SiAlgolia, SiFigma, SiNextdotjs, SiFirebase, SiSwift, SiKotlin, SiAndroid, SiOpenai, SiStripe, SiApple} from "react-icons/si";
 import "./ProjectDetails.css";
 import image1 from "../assets/mockup-1.png";
+import image2 from "../assets/common-life.png";
+import commonLife from "../assets/common-life.png";
+import commonLifeRBG from "../assets/common-life-removebg.png";
 import before_after from "../assets/before-after.png";
 
 const projectData = [
@@ -56,31 +52,44 @@ const projectData = [
   },
   {
     id: 2,
-    title: "Adonai AI",
+    title: "Common Life",
     description: [
-      "This project leverages artificial intelligence to assist pastors, ministry leaders, and Christian believers in crafting sermons, Bible studies, and personalized devotional plans. The AI model is designed to analyze Biblical texts, theological resources, and user input to generate structured and relevant content tailored to individual needs.", 
-      "The goal is to provide a modern tool that empowers users in their faith journey, enhances their understanding of Scripture, and streamlines the preparation process for church services and Bible studies.",
+      "A Bible companion app that leverages a custom ChatGPT model and Artificial Intelligence to provide seminary-level resources in an accessible format for everyday believers. Designed to assist users in deepening their understanding of Scripture, the app offers AI-driven sermon preparation, theological insights, and guided devotionals.",
+      "Whether for pastors, small group leaders, or individuals seeking structured study tools, this platform makes advanced biblical knowledge more approachable and interactive through modern technology.",
     ],
-    image: image1,
-    image2: image1,
-    strategy: "The vision behind this project is to create an innovative, AI-powered platform that enhances the process of sermon and devotional preparation. The platform targets pastors and clergy who wish to streamline their preparation workflows, small group leaders and Bible study organizers who need structured lesson plans, and Christians seeking personalized devotionals to grow spiritually. Core features include AI-driven sermon generation based on Bible passages, themes, or topics; contextual analysis with cross-references to theological resources; and a library of suggested prayer points, key takeaways, and discussion prompts. The platform is designed to save time for leaders, foster deeper spiritual growth, and make Biblical tools more accessible through modern technology.",
-    design: "The product design emphasizes simplicity and usability. The interface features a clean, intuitive design, offering users a streamlined way to input Bible passages, select sermon formats, and organize their materials. Users can access tools such as a scripture input field, a thematic generator for selecting or customizing sermon topics, and a dashboard to save and manage drafts. Collaboration features allow team members to provide feedback, while integration with commentaries and theological resources supports deeper research. The design prioritizes accessibility with adaptive layouts for desktop and mobile, a dark mode for extended use, and compatibility with screen readers to ensure inclusivity. A minimalist aesthetic featuring warm tones and Christian-inspired visuals provides a welcoming and reflective experience. Built using React.js for the frontend and Node.js for the backend, the platform integrates AI tools like OpenAI’s GPT to deliver dynamic and accurate content, supported by a robust database for storing user data and drafts.",
+    image: commonLifeRBG,
+    image2: commonLife,
+    story: [
+      "I was raised in a Christian home. My parents put me and my siblings into a private Christian school that was also our church. We had Bible class, we sang Bible songs, and growing up I spent just about every day of the week inside our church building. While I appreciate the strong foundation and lived examples of faith I received, my personal spiritual practice eventually took a backseat. That changed dramatically, however, with the arrival of my kiddo during the pandemic.",
+      "Becoming a parent made me see that while faith was firm in my heart, I wasn't actively living for God. I needed to start showing my child a lived example of Christ like my parents did for me. My wife and I were blessed to quickly discover a supportive church family where we could share life's experiences and learn together. But life is busy, so I still found there were many times I was trying to go deeper into the Word on my own.",
+      "My career has put me in the same space as AI, which eventually lead to an idea of learning the Bible using AI to help me piece things together I might not have otherwise. I was connected with Adonai Innovations through our church family, and we began a dialogue about how technology can help us learn more about the Word. After a lot of prayers and a few meetings, we concluded that our mutual desire for Kingdom work aligned well with each other, and initial work began on what is now CommonLife.",
+      "I believe that God is moving mountains throughout the world right now. For the first time in history, we have the tools and technology to access, learn, and share the Word anytime and anywhere. Through CommonLife, I hope to empower others to deepen their understanding of Scripture and inspire them to be an example of Christ for all generations to see.",
+    ],
     testimonial: {
       quote:
         "Before hiring these developers, our website was held together with duct tape and good intentions. Now it’s so smooth, even our intern can’t break it (and trust me, they’ve tried). Highly recommend!",
       author: "Jane Doe",
       position: "CTO, Example Corp",
     },
-    services: [
-      "Discovery",
-      "Strategy",
-      "Market analysis",
-      "Front-end engineering",
-      "UI/UX Design",
-      "Product management",
-      "Delivery management",
+    // services: [
+    //   "Discovery",
+    //   "Strategy",
+    //   "Market analysis",
+    //   "Front-end engineering",
+    //   "UI/UX Design",
+    //   "Product management",
+    //   "Delivery management",
+    // ],
+    tools: [
+      "Figma",
+      "Firebase",
+      "Swift",
+      "SwiftUI",
+      "Firebase Analytics",
+      "Open AI",
+      "RevenueCat",
+      "Apple Search Ads",
     ],
-    tools: ["React", "Shopify", "Sanity", "Algolia", "Next.js", "Figma"],
   },
   {
     id: 3,
@@ -152,13 +161,22 @@ const getToolIcon = (tool) => {
     case "Firebase":
       return <SiFirebase size={50} color="#FFCA28" />;
     case "Swift":
-      return <SiSwift size={50} color="#FA7343" />;
-    case "SwiftUI":
+    case "SwiftUI": // Same icon for both
       return <SiSwift size={50} color="#FA7343" />;
     case "Kotlin":
       return <SiKotlin size={50} color="#0095D5" />;
     case "Jetpack Compose":
       return <SiAndroid size={50} color="#3DDC84" />;
+    
+    case "Firebase Analytics":
+      return <SiFirebase size={50} color="#FFCA28" />; // Firebase icon
+    case "Open AI":
+      return <SiOpenai size={50} color="#000" />; // OpenAI official icon
+    case "RevenueCat":
+      return <SiStripe size={50} color="#6772E5" />; // Using Stripe as similar
+    case "Apple Search Ads":
+      return <SiApple size={50} color="#A2AAAD" />; // Apple logo
+
     default:
       return null; // Return null if no icon is available
   }
@@ -183,21 +201,28 @@ const ProjectDetails = () => {
 
       {/* Overview Section */}
       <div className="project-overview-section">
+        <div className="project-overview-description">
+          {project.description.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
         <img
           src={project.image}
           alt={project.title}
           className="project-overview-image"
         />
-        <div className="project-overview-description">
-          {projectData[0].description.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-        </div>
       </div>
 
       {/* Dynamic Services and Tools Section */}
-      <div className="project-services-tools">
-        {project.services && (
+      {/* Dynamic Services and Tools Section */}
+      <div
+        className={`project-services-tools ${
+          !project.services || project.services.length === 0
+            ? "center-tools"
+            : ""
+        }`}
+      >
+        {project.services && project.services.length > 0 && (
           <div className="project-services-section">
             <h3>Services</h3>
             <ul className="project-services-list">
@@ -208,7 +233,7 @@ const ProjectDetails = () => {
           </div>
         )}
 
-        {project.tools && (
+        {project.tools && project.tools.length > 0 && (
           <div className="tools-section">
             <h3>Tools</h3>
             <div className="tools-grid">
@@ -225,12 +250,27 @@ const ProjectDetails = () => {
 
       {/* New Middle Image Section */}
       {project.image2 && (
-        <div className="project-overview-section">
+        <div>
           <img
             src={project.image2}
             alt="Additional visual for the project"
             className="project-other-images"
           />
+        </div>
+      )}
+
+      {/* Our Story Section (Only for Project 2) */}
+      {/* Our Story Section (Only for Project 2) */}
+      {project.id === 2 && project.story && (
+        <div className="our-story-section">
+          <div className="our-story-container">
+            <h2 className="our-story-title">Our Story</h2>
+            <div className="our-story-description">
+              {project.story.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
         </div>
       )}
 
@@ -264,7 +304,7 @@ const ProjectDetails = () => {
         </div>
       )}
 
-       {/* {project.image2 && (
+      {/* {project.image2 && (
         <div className="project-overview-section">
           <img
             src={project.image2}

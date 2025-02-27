@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Projects.css';
 import wj from '../assets/mockup1.png';
 import wj2 from '../assets/before-after.png';
+import commonLife from '../assets/common-life.png';
 
 const projectData = [
   {
@@ -11,14 +12,16 @@ const projectData = [
     description: 'Walk-along journey through Jesus’s life before crucifixion.',
     image: wj,
     url: '/projects/1',
+    tags: 'Product Design | Software Development | UX/UI'
   },
-  // {
-  //   id: 2,
-  //   title: 'Adonai AI',
-  //   description: 'A short and concise description of the project',
-  //   image: wj,
-  //   url: '/projects/2',
-  // },
+  {
+    id: 2,
+    title: 'Common Life',
+    description: 'Artificial Intelligence Bible Companion App',
+    image: commonLife,
+    url: '/projects/2',
+    tags: 'Product Design | Software Development | UX/UI'
+  },
   // {
   //   id: 3,
   //   title: 'Project 3',
@@ -36,7 +39,6 @@ const projectData = [
 ];
 
 const Projects = () => {
-  // Scroll-triggered animation logic
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -81,9 +83,7 @@ const Projects = () => {
       <div className="project-content">
         <h3 className="project-title">{project.title}</h3>
         <p className="project-description">{project.description}</p>
-        <div className="project-tags">
-          <span>Product Design</span> | <span>Software Development</span> | <span>UX/UI</span>
-        </div>
+        <div className="project-tags">{project.tags}</div>
       </div>
     </div>
   ))}

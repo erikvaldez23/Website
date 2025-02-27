@@ -139,9 +139,6 @@
 .project-tags {
   color: #fff;
   margin-bottom: 1rem;
-}
-
-.project-tags span {
   font-size: 1rem;
   font-family: var(--font-primary);
 }
