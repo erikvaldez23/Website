@@ -16,9 +16,9 @@ import before_after from "../assets/before-after.png";
 const projectData = [
   {
     id: 1,
-    title: "With Jesus",
+    title: "Spend a Year With Jesus",
     description: [
-      "With Jesus is a native mobile app that showcases a walk-along journey through Jesus’s life before crucifixion. This was an end-to-end process for our client with development, design, and product managemnet involvement.",
+      "Spend a Year With Jesus is a native mobile app that showcases a walk-along journey through Jesus’s life before crucifixion. This was an end-to-end process for our client with development, design, and product managemnet involvement.",
       "The clients mission is to connect people with Jesus’s experience to enhance their relationship with him, and in doing so affirm and strenghten experiences which build healthy relationships among all people of the world.",
     ],
     image: image1,
@@ -96,8 +96,8 @@ const projectData = [
   },
   {
     id: 3,
-    title: "Project 3",
-    description: "This is a placeholder project description for Project 3.",
+    title: "Tint Tek Plus Website & Chatbot",
+    description: "Placehodler",
     image: image1,
     image2: image1,
     strategy: "Example product strategy for Project 3.",
@@ -121,7 +121,7 @@ const projectData = [
   },
   {
     id: 4,
-    title: "Project 4",
+    title: "Made 2 Move Website",
     description: "This is a placeholder project description for Project 4.",
     image: image1,
     image2: image1,

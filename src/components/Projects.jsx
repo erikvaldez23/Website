@@ -8,7 +8,7 @@ import commonLife from '../assets/common-life.png';
 const projectData = [
   {
     id: 1,
-    title: 'With Jesus',
+    title: 'Spend a Year With Jesus',
     description: 'Walk-along journey through Jesus’s life before crucifixion.',
     image: wj,
     url: '/projects/1',
@@ -24,16 +24,16 @@ const projectData = [
   },
   // {
   //   id: 3,
-  //   title: 'Project 3',
-  //   description: 'A short and concise description of the project',
-  //   image: image5,
+  //   title: 'Tint Tek Plus Website & AI Chatbot',
+  //   description: '',
+  //   image: wj,
   //   url: '/projects/3',
   // },
   // {
   //   id: 4,
-  //   title: 'Project 4',
-  //   description: 'A short and concise description of the project',
-  //   image: image2,
+  //   title: 'Made 2 Move Website',
+  //   description: '',
+  //   image: wj,
   //   url: '/projects/4',
   // },
 ];
